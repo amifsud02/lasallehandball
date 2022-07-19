@@ -1,0 +1,31 @@
+.error-content
+{
+    display: flex;
+    flex-direction: row;
+    letter-spacing: .1rem;
+    align-items: flex-end;
+}
+
+.error-404{}
+
+.error-title-content
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.error-404
+{
+    font-size: 100px;
+    font-weight: 800;
+    padding-right: 75px;
+    vertical-align: middle;
+}
+.error-title
+{
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 40px;
+    
+}

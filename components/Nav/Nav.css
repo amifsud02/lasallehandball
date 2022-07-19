@@ -1,0 +1,68 @@
+.navbar
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    width: 80%;
+    margin: 0 auto;
+    height: 80px;
+}
+
+.logo-container span
+{
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.links-container
+{
+
+}
+
+.navbar-items
+{
+    display: flex;
+}
+
+.navbar-color
+{
+    color:blue;
+}
+
+.navbar-item
+{
+    list-style: none;
+    padding: 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Raleway', sans-serif;
+}
+
+.navbar-link
+{
+    display: inline-block;
+    position: relative;
+    padding: 10px 0;
+}
+
+.navbar-link:after 
+{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.navbar-link:hover:after
+{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

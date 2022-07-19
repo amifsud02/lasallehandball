@@ -1,0 +1,40 @@
+{
+    "standings" :
+    [
+        {            
+            "id" : "1",
+            "name" : "La Salle",
+            "pos" : "1",
+            "played" : "7",
+            "won" : "3",
+            "draw" : "2",
+            "lost" : "2",
+            "points" : "8",
+            "goalDif" : "+35"
+        },
+
+        {            
+            "id" : "2",
+            "name" : "HMS",
+            "pos" : "2",
+            "played" : "8",
+            "won" : "0",
+            "draw" : "2",
+            "lost" : "6",
+            "points" : "2",
+            "goalDif" : "-135"
+        },
+
+        {            
+            "id" : "3",
+            "name" : "Kavallieri",
+            "pos" : "3",
+            "played" : "8",
+            "won" : "0",
+            "draw" : "2",
+            "lost" : "6",
+            "points" : "2",
+            "goalDif" : "-135"
+        }
+    ]
+}

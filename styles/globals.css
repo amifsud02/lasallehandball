@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgba(181, 104, 218, 0.247); */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body
+{
+  background: #F7F7F7;
+  font-family: 'Raleway', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container
+{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.g-container
+{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 65%;
+  margin: auto auto;
+  
+}
+
+.d-flex
+{
+  display: block;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.d-hidden
+{
+  display: none;
+}
+
+.menu-outline
+{
+  display: none;
+}
+
+.menu-close
+{
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+}
+
+.menu-container 
+{
+  position: absolute;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: blue;
+}
+
+.hero-title h1
+{
+  font-family: 'Roboto', sans-serif;
+  font-size: 6em;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  line-height: 85%;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+}
+
+.lm-container
+{
+  
+}
