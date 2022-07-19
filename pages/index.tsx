@@ -205,14 +205,14 @@ export default function HomePage()
                                     <table width="100%">
                                         <thead>
                                             <tr className="leaderboard-header">
-                                                <th id="w-7.5">Pos</th>
-                                                <th id="w-42.5">Team</th>
-                                                <th id="w-7.5">GP</th>
-                                                <th id="w-7.5">W</th>
-                                                <th id="w-7.5">D</th>
-                                                <th id="w-7.5">L</th>
-                                                <th id="w-7.5">GD</th>
-                                                <th id="w-7.5">P</th>
+                                                <th id="w-75">Pos</th>
+                                                <th id="w-425">Team</th>
+                                                <th id="w-75">GP</th>
+                                                <th id="w-75">W</th>
+                                                <th id="w-75">D</th>
+                                                <th id="w-75">L</th>
+                                                <th id="w-75">GD</th>
+                                                <th id="w-75">P</th>
                                             </tr>
                                         </thead>
                                         <tbody>
