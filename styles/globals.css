@@ -99,7 +99,12 @@ a {
   -webkit-text-stroke-color: white;
 }
 
-.lm-container
+#w-75
 {
-  
+  width: 7.5%;
+}
+
+#w-425
+{
+  width: 47.5%;
 }
