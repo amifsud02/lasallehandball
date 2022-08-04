@@ -108,3 +108,46 @@ a {
 {
   width: 47.5%;
 }
+
+.promo-banner
+{
+  background: -moz-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  background: -webkit-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  background: linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1); 
+}
+
+.promo-banner .parent
+{
+  flex-direction: row;
+  height: 150px;
+  position: relative;
+}
+
+.promo-banner .pb-title
+ {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.25em;
+ }
+
+ .pb-button
+ {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px 40px;
+  color: white;
+  font-size: .8em;
+  font-weight: 800;
+  height: 50px;
+}

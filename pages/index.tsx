@@ -222,10 +222,10 @@ export default function Home(props: any)
                         </Tabs>
                     </div>
                 </section>
-                <section>
-                    <div className="">
-                        <h1>Become Part of a great team</h1>
-                        <button></button>
+                <section className="promo-banner">
+                    <div className="parent">
+                        <h1 className="pb-title">Become Part of a great team</h1>
+                        <button className="pb-button">JOIN US</button>
                     </div>
                 </section>
             </main>
