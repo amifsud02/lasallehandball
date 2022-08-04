@@ -23,14 +23,15 @@ const Tabs: React.FC<Props> = ({ children, redirect }) => {
             />
           ))}
         </div>
+
         <Link href={redirect}>
             <a>Show All</a>
         </Link>
+        
       </ul>
-      
-      
 
       {children[selectedTab]}
+
     </div>
   );
 };

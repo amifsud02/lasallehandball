@@ -14,7 +14,7 @@ const Navbar = () => {
         <>
             <div className="navbar container">
                 <div className="navbar-brand">
-                    <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png"></img>
+                    <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
                 </div>
 
                 <nav className="navbar-items">

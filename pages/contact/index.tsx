@@ -1,5 +1,14 @@
+import Nav from "../../components/Nav/Nav";
+
 function ContactPage(){
-    return <h1>Contact Us Page</h1>
+    return(
+        <>
+            <Nav/> 
+
+            Contact Us
+        </>
+        
+    )
 }
 
 export default ContactPage;

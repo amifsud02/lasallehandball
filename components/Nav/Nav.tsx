@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import * as data from './links.json'
-import { MenuOutlined } from "@material-ui/icons";
 import Menu from './Menu'
 import { useRouter } from "next/router";
 
@@ -23,7 +22,7 @@ const Links: React.FC<{ links: LinkType[] }> = ( {links} ) => {
                 return (
                     <li key={link.href} className="navbar-item">
                         <Link href={link.href}>
-                            <a className="navbar-link">{link.label}</a>
+                            <a className={router.pathname == link.href ? "navbar-link active" : "navbar-link"}>{link.label}</a>
                         </Link>
                     </li>
                 )
@@ -46,11 +45,11 @@ const Nav: React.FC<{}> = () => {
     return(
         <div className='navbar container'>
             <div className='navbar-brand'>
-                <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png"></img>
+                <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
             </div>
             
             <div className="menu-outline">
-                <MenuOutlined onClick={showMenu}></MenuOutlined>
+                {/* <MenuOutlined onClick={showMenu}></MenuOutlined> */}
             </div>
 
             <Links links={links}/>

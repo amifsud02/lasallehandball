@@ -1,11 +1,15 @@
-import '/styles/globals.css'
-import '/components/Navbar/navbar.css'
-import '/styles/Hero.css'
-import '/pages/404/404_styles.css'
-import '/styles/responsive.css'
-import '/styles/matches.css'
+//import '../styles/undermaintanence.css'
 
-import type { AppProps } from 'next/app'
+import '../styles/globals.css'
+import '../styles/Hero.css'
+import '../styles/matches.css'
+import '../styles/responsive.css'
+import '../styles/Home.module.css'
+import '../styles/Nav.css'
+
+
+
+import { AppProps } from 'next/app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

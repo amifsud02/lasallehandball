@@ -1,5 +1,14 @@
+import Nav from "../../components/Nav/Nav";
+
 function AboutPage(){
-    <h1>About Page</h1>
+    return(
+        <>
+            <Nav/> 
+
+            About Us
+        </>
+        
+    )
 }
 
 export default AboutPage;

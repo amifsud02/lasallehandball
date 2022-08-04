@@ -1,44 +1,68 @@
-import { Close } from "@material-ui/icons";
-import Nav from "components/Nav/Nav";
-import Navbar from "components/Navbar/Navbar";
+import { GetStaticProps } from "next/types"
+import React from "react"
+import { supabase } from "../utils/supabaseClient"
+
+import Nav from "../components/Nav/Nav";
+import Navbar from "../components/Navbar/Navbar";
 import Head from "next/head";
-import Link from "next/link";
+import Tabs from "../components/Tab/Tabs";
+import Tab from "../components/Tab/Tab";
+import Leaderboard from "../components/Leaderboard/Leaderboard";
+import Matches from "../components/Matches/Matches";
 
-import Tabs from "components/Tab/Tabs";
-import Tab from "components/Tab/Tab";
 
-import { ReactEventHandler, useState } from "react";
 
-import * as standings from "./leaderboard-list.json"
-const standingsString = JSON.stringify(standings)
-const standingsData = JSON.parse(standingsString).standings
+export type Teams = {
+  id: number;
+  teamName: string;
+}
 
-import * as test from "./leaderboard-list.json"
-const testString = JSON.stringify(test)
-const testData = JSON.parse(testString).standings
+export type Competitions = {
+  id: number;
+  competitionTypes: CompetitionTypes;
+  category: Category;
+}
 
-type standingsType = {
-    id: number;
-    name: string;
-    pos: number;
-    played: number;
-    won: number;
-    draw: number;
-    lost: number;
-    points: number;
-    goalDif: number;
+export type CompetitionTypes = {
+  id: number;
+  competitionType: string;
+}
+
+export type Category = {
+  id: number;
+  categoryName: string;
+}
+
+export type Leaderboards = {
+  id: number;
+  competitionId: number;
+  competitionName: string;
+  categoryName: string;
+  teamId: number;
+  teamName: string;
+  played: number;
+  wins: number;
+  draws: number;
+  losses: number;
+  points: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+  teams: Teams;
+  competitions: Competitions;
 }
 
 
-export default function HomePage()
-{
-    return(
-        <>
+export default function Home(props: any)
+{ 
+  return(
+
+    <>
             <Head>
                 <title>LSHC - Home</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-        
+            
             <main>
                 <div className="hero">
                     <Nav/>  
@@ -60,7 +84,8 @@ export default function HomePage()
 
                         <Tabs redirect="/matches">
                             <Tab title="National League">
-                                <div className="match">
+                                <Matches id={1}></Matches>
+                                {/* <div className="match">
                                     <div className="home-team">
                                         <div className="team-badge"></div>
                                         <span className="team-name">La Salle</span>
@@ -80,28 +105,7 @@ export default function HomePage()
                                         <span className="team-name">HMS</span>
                                         <div className="team-badge"></div>
                                     </div>
-                                </div>
-                                <div className="match">
-                                    <div className="home-team">
-                                        <div className="team-badge"></div>
-                                        <span className="team-name">La Salle</span>
-                                    </div>
-                                    <div className="match-details">
-                                        <div className="match-type">
-                                        <h4>National League - U21 Men</h4>
-                                        </div>
-                                        <div className="match-score">
-                                        <span>25 - 24</span>  
-                                        </div>
-                                        <div className="match-status">
-                                            FULL TIME
-                                        </div>
-                                    </div>
-                                    <div className="away-team">
-                                        <span className="team-name">HMS</span>
-                                        <div className="team-badge"></div>
-                                    </div>
-                                </div>
+                                </div> */}
                             </Tab>
 
                             <Tab title="MHA Cup">
@@ -201,51 +205,19 @@ export default function HomePage()
 
                         <Tabs redirect="/team">
                             <Tab title="National League Men">
-                                <div className="leaderboard">
-                                    <table width="100%">
-                                        <thead>
-                                            <tr className="leaderboard-header">
-                                                <th id="w-75">Pos</th>
-                                                <th id="w-425">Team</th>
-                                                <th id="w-75">GP</th>
-                                                <th id="w-75">W</th>
-                                                <th id="w-75">D</th>
-                                                <th id="w-75">L</th>
-                                                <th id="w-75">GD</th>
-                                                <th id="w-75">P</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            
-                                            {standingsData.map((team : standingsType) => {
-                                                return (
-                                                    <tr key={team.id}>
-                                                        <td className="lb-pos">{team.pos}</td>
-                                                        <td className="lb-team">{team.name}</td>
-                                                        <td>{team.played}</td>
-                                                        <td>{team.won}</td>
-                                                        <td>{team.draw}</td>
-                                                        <td>{team.lost}</td>
-                                                        <td>{team.goalDif}</td>
-                                                        <td>{team.points}</td>
-                                                    </tr>
-                                                )
-                                            })}
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <Leaderboard props={props.leaderboards} cid={"Men"}/>
                             </Tab>
 
                             <Tab title="National League Women">
-                                National League Women
+                                <Leaderboard props={props.leaderboards} cid={"Women"}/>
                             </Tab>
 
                             <Tab title="U21 Men">
-                                U21 Men
+                                <Leaderboard props={props.leaderboards} cid={"U21 Men"}/>
                             </Tab>
 
                             <Tab title="U21 Women">
-                                U21 Women
+                                <Leaderboard props={props.leaderboards} cid={"U21 Women"}/>
                             </Tab>
                         </Tabs>
                     </div>
@@ -258,6 +230,40 @@ export default function HomePage()
                 </section>
             </main>
         </>
-    )
+    // <>
+    //   {
+    //     props.leaderboards.map(
+    //       (leaderboard: Leaderboards) => {
+    //         if(leaderboard.competitions.category.categoryName == "U21 Men")
+    //         {
+    //           return(
+    //             <div>
+    //               <h1>{leaderboard.teams.teamName}</h1>
+    //               <h2>{leaderboard.competitionName}</h2>
+    //               <h3>{leaderboard.competitions.category.categoryName}</h3>
+    //               <h4>{leaderboard.played}</h4>
+    //               <h4>{leaderboard.wins}</h4>
+    //               <h4>{leaderboard.draws}</h4>
+    //             </div>
+    //           )
+    //         } 
+    //       }
+    //     )
+    //   }
+      
+    // </>            
+  )
 }
+     
 
+export const getStaticProps: GetStaticProps = async () => {
+  const {data: teams} =  await supabase.from('teams').select('*')
+  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))")
+
+  return{
+    props: {
+      teams,
+      leaderboards
+    }
+  }
+}

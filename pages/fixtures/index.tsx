@@ -1,6 +1,15 @@
+import Nav from "../../components/Nav/Nav";
+
 function FixturesPage()
 {
-    return <h1>Fixtures Page</h1>
+    return(
+        <>
+            <Nav/> 
+
+            Fixtures
+        </>
+        
+    )
 }
 
 export default FixturesPage;

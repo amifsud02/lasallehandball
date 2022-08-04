@@ -1,5 +1,14 @@
+import Nav from "../../components/Nav/Nav";
+
 function ManagementPage(){
-    <h1>About Page</h1>
+    return(
+        <>
+            <Nav/> 
+
+            Management
+        </>
+        
+    )
 }
 
 export default ManagementPage;
