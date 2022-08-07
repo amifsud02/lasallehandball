@@ -37,24 +37,26 @@ const Nav: React.FC<{}> = () => {
 
     const [active, setActive] = useState(false)
 
-    const showMenu = () =>{
+    const showMenu = () =>{ 
         setActive(!active);
         console.log(active)
     }
 
     return(
-        <div className='navbar container'>
-            <div className='navbar-brand'>
-                <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
-            </div>
-            
-            <div className="menu-outline">
-                {/* <MenuOutlined onClick={showMenu}></MenuOutlined> */}
-            </div>
+        <div className="navbar-bg">
+            <div className='navbar container'>
+                <div className='navbar-brand'>
+                    <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
+                </div>
+                
+                <div className="menu-outline">
+                    {/* <MenuOutlined onClick={showMenu}></MenuOutlined> */}
+                </div>
 
-            <Links links={links}/>
+                <Links links={links}/>
 
-            <Menu showMenu={showMenu} active={active}></Menu>
+                <Menu showMenu={showMenu} active={active}></Menu>
+            </div>
         </div>
     )
 }

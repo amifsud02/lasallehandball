@@ -3,12 +3,13 @@ import React from "react";
 type Props = {
   title: string;
   index: number;
+  isActive: boolean;
   setSelectedTab: (index: number) => void;
 };
 
-const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index }) => {
+const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index, isActive }) => {
   return (
-    <button className="tablinks" onClick={() => setSelectedTab(index)}>{title}</button>
+    <button className={isActive ? "tablinks active" : 'tablinks' }onClick={() => setSelectedTab(index)}>{title}</button>
   );
 };
 

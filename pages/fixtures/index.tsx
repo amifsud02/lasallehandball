@@ -1,12 +1,10 @@
-import Nav from "../../components/Nav/Nav";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 function FixturesPage()
 {
     return(
         <>
-            <Nav/> 
-
-            Fixtures
+           <PageHeader pageName="Fixtures"/>
         </>
         
     )

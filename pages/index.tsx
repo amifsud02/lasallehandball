@@ -9,6 +9,7 @@ import Tabs from "../components/Tab/Tabs";
 import Tab from "../components/Tab/Tab";
 import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
+import Footer from "../components/Footer/Footer";
 
 
 
@@ -228,6 +229,7 @@ export default function Home(props: any)
                         <button className="pb-button">JOIN US</button>
                     </div>
                 </section>
+                <Footer></Footer>
             </main>
         </>
     // <>
@@ -258,7 +260,7 @@ export default function Home(props: any)
 
 export const getStaticProps: GetStaticProps = async () => {
   const {data: teams} =  await supabase.from('teams').select('*')
-  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))")
+  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
 
   return{
     props: {

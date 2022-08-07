@@ -5,12 +5,14 @@
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: rgb(1,41,111), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%),  url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
+    background: rgb(1,41,111), url('../public/la-salle-hero.jpg') no-repeat center;
+    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url('../public/la-salle-hero.jpg') no-repeat center;
+    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%),  url('../public/la-salle-hero.jpg') no-repeat center;
+    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url('../public/la-salle-hero.jpg') no-repeat center;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
     
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 hr {

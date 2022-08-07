@@ -20,6 +20,7 @@ const Tabs: React.FC<Props> = ({ children, redirect }) => {
               title={item.props.title}
               index={index}
               setSelectedTab={setSelectedTab}
+              isActive={selectedTab === index}
             />
           ))}
         </div>

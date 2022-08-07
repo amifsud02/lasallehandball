@@ -1,11 +1,9 @@
-import Nav from "../../components/Nav/Nav";
+import PageHeader from "../../components/PageHeader/PageHeader";
 
 function ManagementPage(){
     return(
         <>
-            <Nav/> 
-
-            Management
+            <PageHeader pageName="Management"/>
         </>
         
     )
