@@ -156,7 +156,7 @@ a {
     /* position: fixed;
     top: 0; */
     width: 100vw;
-    height: 500px;
+    height: 400px;
     z-index: -1;
     background: rgb(1,41,111), url('../public/template.svg') no-repeat center;
     background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36, .95) 100%), url('../public/template.svg') no-repeat center;
@@ -168,7 +168,7 @@ a {
 
 .page-header-info
 {
-  padding-top: 100px;
+  padding-top: 50px;
 }
 
 .page-title
@@ -186,4 +186,14 @@ a {
   text-transform: uppercase;
 }
 
+.page-content-body-text p
+{
+  text-align: justify;
+  margin: 20px 0;
+}
 
+.page-content-body-text span li
+{
+  margin-left: 50px;
+  list-style: square;
+}
