@@ -1,44 +1,64 @@
-type Fixture = {
-    id: number;
-    homeTeamId: number;
-    awayTeamId: number;
-    homeScore: number;
-    awayScore: number;
-    date: string;
-    location: string;
-    status: string;
-    competitionId: number;
-}
+import { Match } from "../../pages"
 
-const Matches = ({id}: {id: number}) =>
+export default function Matches({props, cid}: {props: any, cid: string})
 {   
     
-   
-            return(
+    
+    let counter = 0;
 
-                <div className="match">
-                    <div className="home-team">
-                        <div className="team-badge"></div>
-                        <span className="team-name"></span>
-                    </div>
-                    <div className="match-details">
-                        <div className="match-type">
-                        <h4>National League - U21 Men</h4>
+    return(
+        <>
+            {
+            props.map((match: Match) => {
+                if(match.competitions.competitionTypes.competitionName == cid)
+                { 
+                    return(
+                        <div className="match">
+                            <div className="home-team">
+                                <div className="team-badge"></div>
+                                <span className="team-name">{match.homeTeam.teamName}</span>
+                            </div>
+                            <div className="match-details">
+                                <div className="match-type">
+                                <h4>{match.competitions.competitionTypes.competitionName} - {match.competitions.category.categoryName}</h4>
+                                </div>
+                                <div className="match-score">
+                                    <span>
+                                        {match.homeScore} - {match.awayScore}   
+                                    </span>  
+                                </div>
+                                <div className="match-status">
+                                    {match.status}
+                                </div>
+                            </div>
+                            <div className="away-team">
+                                <span className="team-name">{match.awayTeam.teamName}</span>
+                                <div className="team-badge"></div>
+                            </div>
                         </div>
-                        <div className="match-score">
-                        <span></span>  
-                        </div>
-                        <div className="match-status">
-                            
-                        </div>
-                    </div>
-                    <div className="away-team">
-                        <span className="team-name"></span>
-                        <div className="team-badge"></div>
-                    </div>
-                </div>
-            )
-        }
+                    )
+                }
+                else
+                {
+                    if(counter == 0)
+                    {
+                        counter++;
+
+                        return(
+                            <h1>No Matches Found</h1>
+                        )
+                    }
+                    
+                    
+                }
+            })}
+               
+            
+        
+        </>
+            
+        
+    )
+}
         
     
-export default Matches

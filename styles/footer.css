@@ -1,6 +1,40 @@
 .main-footer
 {
+    
+
+    background: rgb(1,41,111);
+    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36, 1) 100%);
+    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36, 1) 100%);
+    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,.95) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
+    background-size: cover;
+    padding: 75px 0;
+    color: white;
+}
+
+.footer-content
+{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.f-info
+{
+    padding: 5px 0 ;
+}
+
+.sub-footer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 60%;
+    margin: 0 auto;
+    padding: 25px 0;   
+    color: #999999;
+    font-size: 12px;
+    letter-spacing: .0em;
 }

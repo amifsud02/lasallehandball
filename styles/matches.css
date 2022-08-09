@@ -104,7 +104,15 @@ button
 .away-team {
   display: flex;
   align-items: center;
+  width: 25%;
 }
+
+.away-team
+{
+  justify-content: end;
+}
+
+
 
 .team-badge {
   background: grey;
@@ -140,6 +148,7 @@ button
   margin: 20px;
   font-size: 10px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 th

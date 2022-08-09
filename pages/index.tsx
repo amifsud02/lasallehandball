@@ -26,7 +26,7 @@ export type Competitions = {
 
 export type CompetitionTypes = {
   id: number;
-  competitionType: string;
+  competitionName: string;
 }
 
 export type Category = {
@@ -51,6 +51,23 @@ export type Leaderboards = {
   goalDifference: number;
   teams: Teams;
   competitions: Competitions;
+}
+
+export type Match = {
+    id: number;
+    competitionId: number;
+    homeTeam: Teams;
+    awayTeam: Teams;
+    homeTeamName: string;
+    awayTeamName: string;
+    homeScore: number;
+    awayScore: number;
+    status: string;
+    date: string;
+    time: string;
+    location: string;
+    categoryName: string;
+    competitions: Competitions;
 }
 
 
@@ -85,7 +102,7 @@ export default function Home(props: any)
 
                         <Tabs redirect="/matches">
                             <Tab title="National League">
-                                <Matches id={1}></Matches>
+                                <Matches props={props.matches} cid="National League"></Matches>
                                 {/* <div className="match">
                                     <div className="home-team">
                                         <div className="team-badge"></div>
@@ -110,7 +127,8 @@ export default function Home(props: any)
                             </Tab>
 
                             <Tab title="MHA Cup">
-                                <div className="match">
+                                <Matches props={props.matches} cid="MHA Cup"></Matches>
+                                {/* <div className="match">
                                     <div className="home-team">
                                         <div className="team-badge"></div>
                                         <span className="team-name">La Salle</span>
@@ -130,11 +148,12 @@ export default function Home(props: any)
                                         <span className="team-name">HMS</span>
                                         <div className="team-badge"></div>
                                     </div>
-                                </div>
+                                </div> */}
                             </Tab>
 
                             <Tab title="Friendlies">
-                                <div className="match">
+                                <Matches props={props.matches} cid="Friendlies"></Matches>
+                                {/* <div className="match">
                                     <div className="home-team">
                                         <div className="team-badge"></div>
                                         <span className="team-name">La Salle</span>
@@ -196,7 +215,7 @@ export default function Home(props: any)
                                         <span className="team-name">HMS</span>
                                         <div className="team-badge"></div>
                                     </div>
-                                </div>                                
+                                </div>                                 */}
                             </Tab>
                         </Tabs>
                     </div>
@@ -259,13 +278,13 @@ export default function Home(props: any)
      
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {data: teams} =  await supabase.from('teams').select('*')
   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
+  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName), awayTeam!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Not Started').order('date', { ascending: true })
 
   return{
     props: {
-      teams,
-      leaderboards
+      leaderboards,
+      matches
     }
   }
 }
