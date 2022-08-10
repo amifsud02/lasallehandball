@@ -3,7 +3,6 @@ import Link from "next/link";
 import * as data from './links.json'
 import Menu from './Menu'
 import { useRouter } from "next/router";
-import MenuIcon from '@mui/icons-material/Menu';
 
 const linksString = JSON.stringify(data)
 const links = JSON.parse(linksString).links

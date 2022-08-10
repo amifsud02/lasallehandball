@@ -96,3 +96,11 @@
     }
 }
 
+@media (min-width: 1201px) {
+
+    .menu-toggle, .menu-overlay-hidden, .menu-overlay-active
+    {
+        display: none;
+    }
+
+}
