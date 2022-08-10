@@ -3,6 +3,7 @@ import Link from "next/link";
 import * as data from './links.json'
 import Menu from './Menu'
 import { useRouter } from "next/router";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const linksString = JSON.stringify(data)
 const links = JSON.parse(linksString).links
@@ -48,16 +49,13 @@ const Nav: React.FC<{}> = () => {
                 <div className='navbar-brand'>
                     <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
                 </div>
-                
-                <div className="menu-outline">
-                    {/* <MenuOutlined onClick={showMenu}></MenuOutlined> */}
+                <div className='navbar-overlay'>
+                    <Links links={links}></Links>
                 </div>
-
-                <Links links={links}/>
-
                 <Menu showMenu={showMenu} active={active}></Menu>
             </div>
         </div>
+        
     )
 }
 

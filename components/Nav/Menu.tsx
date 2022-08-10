@@ -1,4 +1,5 @@
-//import { Close } from "@material-ui/icons";
+import { Cross, Cross as Hamburger } from 'hamburger-react'
+
 import Link from "next/link";
 import { ReactEventHandler } from "react";
 import * as data from './links.json'
@@ -13,10 +14,11 @@ type LinkType = {
 
 const Links: React.FC<{ links: LinkType[], active: boolean}> = ({links, active}) => {
     return (
-        <div className={active ? 'd-flex' : 'd-hidden'}>
+        // <div className={active ? 'd-flex' : 'd-hidden'}>
+        <div>
             {links.map((link: LinkType) => {
                 return (
-                    <div key={link.href} className='menu-items'>
+                    <div key={link.href} className='menu-item'>
                         <Link href={link.href}>
                             <a className='menu-link'>{link.label}</a>
                         </Link>
@@ -29,11 +31,14 @@ const Links: React.FC<{ links: LinkType[], active: boolean}> = ({links, active})
 
 const Menu: React.FC<{showMenu: ReactEventHandler, active: boolean}> = ({showMenu, active}) => {
     return(
-        // <div className="menu-container">
-        //     <Close onClick={showMenu} className="menu-close"></Close>
-        //     
-        // </div>
-        <Links active={active} links={links}></Links>
+        <>
+            <i className='menu-toggle' onClick={showMenu}><Cross size={40} color="#fff"></Cross></i>
+            
+            <div className={active ? 'menu-overlay-active' : 'menu-overlay-hidden'}>
+                <Links active={active} links={links}></Links>
+            </div>
+        </>
+       
     )
 }
 

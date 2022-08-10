@@ -1,9 +1,7 @@
 import { Match } from "../../pages"
 
 export default function Matches({props, cid}: {props: any, cid: string})
-{   
-    
-    
+{       
     let counter = 0;
 
     return(
@@ -13,7 +11,7 @@ export default function Matches({props, cid}: {props: any, cid: string})
                 if(match.competitions.competitionTypes.competitionName == cid)
                 { 
                     return(
-                        <div className="match">
+                        <div className="match" key={match.id}>
                             <div className="home-team">
                                 <div className="team-badge"></div>
                                 <span className="team-name">{match.homeTeam.teamName}</span>
@@ -48,16 +46,9 @@ export default function Matches({props, cid}: {props: any, cid: string})
                             <h1>No Matches Found</h1>
                         )
                     }
-                    
-                    
                 }
             })}
-               
-            
-        
         </>
-            
-        
     )
 }
         

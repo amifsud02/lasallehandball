@@ -1,7 +1,10 @@
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {
-
+@media (min-width: 576px) {    
+    .menu-overlay
+    {   
+        display: none;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -19,14 +22,77 @@
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (max-width: 1200px) {
-    .navbar-items
+    .navbar-overlay
     {
         display: none;
     }
 
-    .menu-outline
+    .menu-overlay-active
+    {   
+        display: flex;
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
+        z-index: 100;
+
+        background: rgb(1,41,111);
+        background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,1) 100%);
+        background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,1) 100%);
+        background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
+
+        transition: 1s;
+    }
+
+    .menu-overlay-hidden
+    {
+        display: none;
+    }
+
+    .menu-toggle
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 30px;
+        z-index: 1000;
+
+    }
+    .menu-items-active
     {
         display: block;
-        cursor: pointer;
+    }
+
+    .menu-items-hidden
+    {
+        display: none;
+    }
+
+    .menu-item
+    {
+        position: relative;
+        list-style: none;
+        text-align: center;
+        display: block;
+    }
+
+    .menu-link
+    {
+        display: inline-block;
+        position: relative;
+        text-decoration: none;
+        font-size: 3.5em;
+        padding: 20px 10px;
+        color: #fff;
+        font-weight: 700;
+        text-transform: uppercase;
     }
 }
+
