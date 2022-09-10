@@ -27,30 +27,8 @@ a {
 
 .container
 {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
-}
-
-.g-container
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  width: 80%;  
-}
-
-.d-flex
-{
-  display: block;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
 }
 
 .d-hidden

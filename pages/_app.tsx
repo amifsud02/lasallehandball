@@ -4,7 +4,6 @@ import '../styles/globals.css'
 import '../styles/Hero.css'
 import '../styles/matches.css'
 import '../styles/responsive.css'
-import '../styles/Home.module.css'
 import '../styles/Nav.css'
 import '../styles/footer.css'
 

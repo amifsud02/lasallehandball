@@ -72,61 +72,30 @@ export type Match = {
 export default function Home(props: any)
 { 
   return(
-
     <>
       <Head>
           <title>LSHC - Home</title>
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      
-      
 
       <main>
-          <div className="hero">
-         
-            <Nav/>
-             <div className="g-container">
+        <section className="hero">
+          <Nav/>             
 
-
-                <div className="hero-title">
-                    <h1>La Salle<br/>Handball<br/>Club</h1>
-                </div> 
-            </div>
-{/*
-            <div className="hero-email">
-                <hr></hr>
-                <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-            </div> */}
+          <div className="container">
+            <div className="hero-title d-flex">
+              <h1>La Salle<br/>Handball<br/>Club</h1>
+            </div> 
           </div>
-
-          
-          
+              
+          {/* <div className="hero-email">
+            <hr></hr>
+            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
+          </div> */}
+        </section>
       </main>
-
       {/* <Footer></Footer> */}
     </>
-    // <>
-    //   {
-    //     props.leaderboards.map(
-    //       (leaderboard: Leaderboards) => {
-    //         if(leaderboard.competitions.category.categoryName == "U21 Men")
-    //         {
-    //           return(
-    //             <div>
-    //               <h1>{leaderboard.teams.teamName}</h1>
-    //               <h2>{leaderboard.competitionName}</h2>
-    //               <h3>{leaderboard.competitions.category.categoryName}</h3>
-    //               <h4>{leaderboard.played}</h4>
-    //               <h4>{leaderboard.wins}</h4>
-    //               <h4>{leaderboard.draws}</h4>
-    //             </div>
-    //           )
-    //         } 
-    //       }
-    //     )
-    //   }
-      
-    // </>            
   )
 }
      
