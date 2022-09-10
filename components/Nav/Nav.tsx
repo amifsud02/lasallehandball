@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import * as data from './links.json'
-import Menu from './Menu'
 import { useRouter } from "next/router";
+
+import { Cross as Hamburger } from 'hamburger-react'
 
 const linksString = JSON.stringify(data)
 const links = JSON.parse(linksString).links
@@ -12,6 +13,10 @@ type LinkType = {
     href: string;
 }
 
+/*
+ *  Links component
+ *  Will render the links for the menu
+ */
 const Links: React.FC<{ links: LinkType[] }> = ( {links} ) => {
 
     const router = useRouter()
@@ -31,31 +36,71 @@ const Links: React.FC<{ links: LinkType[] }> = ( {links} ) => {
     )
 }
 
+
+/* 
+ *   
+*/
 const Nav: React.FC<{}> = () => {
-    
-    // Adding Responsive Functionality
+ 
+    const [isOpen, setOpen] = useState(false);
 
-    const [active, setActive] = useState(false)
-
-    const showMenu = () =>{ 
-        setActive(!active);
-        console.log(active)
+    const handleClick = () => {
+        console.log(isOpen);
+        if(isOpen === true) {            
+            document.body.style.maxHeight = "none";
+            document.body.style.overflowY = 'scroll'; 
+        }   
+        else {
+            document.body.style.maxHeight = "100vh";
+            document.body.style.overflowY = "hidden";     
+        }
     }
-
-    return(
+        
+    return (
         <div className="navbar-bg">
-            <div className='navbar container'>
+            <div className='navbar'>
                 <div className='navbar-brand'>
                     <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
                 </div>
-                <div className='navbar-overlay'>
+
+                <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
                     <Links links={links}></Links>
                 </div>
-                <Menu showMenu={showMenu} active={active}></Menu>
+
+                <div className='navbar-hamburger' onClick={handleClick}>
+                    <Hamburger 
+                        size={40} 
+                        color="#fff" 
+                        toggled={isOpen} 
+                        toggle={setOpen}
+                    />
+                </div>
             </div>
         </div>
-        
     )
 }
 
 export default Nav;
+
+    // const showMenu = () =>{ 
+    //     setActive(!active);
+    //     console.log(active)
+    // }
+
+    // return(
+    //     <>
+    //         <div className="navbar-bg">
+    //             <div className='navbar container'>
+    //                 <div className='navbar-brand'>
+    //                     <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
+    //                 </div>
+    //                 <div className='navbar-overlay'>
+    //                     <Links links={links}></Links>
+    //                 </div>
+
+    //                 <i className='menu-toggle' onClick={showMenu}><Cross size={40} color="#fff"></Cross></i>
+    //             </div>
+    //         </div>
+    //     </>
+           
+

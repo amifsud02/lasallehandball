@@ -14,8 +14,8 @@ type LinkType = {
 
 const Links: React.FC<{ links: LinkType[], active: boolean}> = ({links, active}) => {
     return (
-        // <div className={active ? 'd-flex' : 'd-hidden'}>
-        <div>
+        
+        <>
             {links.map((link: LinkType) => {
                 return (
                     <div key={link.href} className='menu-item'>
@@ -25,21 +25,40 @@ const Links: React.FC<{ links: LinkType[], active: boolean}> = ({links, active})
                     </div>
                 )
             })}
-        </div>
-    )
-}
-
-const Menu: React.FC<{showMenu: ReactEventHandler, active: boolean}> = ({showMenu, active}) => {
-    return(
-        <>
-            <i className='menu-toggle' onClick={showMenu}><Cross size={40} color="#fff"></Cross></i>
-            
-            <div className={active ? 'menu-overlay-active' : 'menu-overlay-hidden'}>
-                <Links active={active} links={links}></Links>
-            </div>
         </>
-       
     )
 }
 
-export default Menu;
+// const Menu: React.FC<{showMenu: ReactEventHandler, active: boolean}> = ({showMenu, active}) => {
+
+//     let opacityClasses = ["menu-overlay"];
+
+//     active ? opacityClasses.push("opacity-on") : opacityClasses.push("opacity-off");
+
+//     return(
+
+//         <div 
+//             className={opacityClasses.join(" ")}
+//             onClick={showMenu}
+//         >
+            
+//             <div className='sidebar-wrapper'>
+//                 <div className='sidebar-menu'>
+//                     <Links links={links} active={active}></Links>
+//                 </div>
+//             </div>
+
+//         </div>
+
+//         // <>
+//         //     <i className='menu-toggle' onClick={showMenu}><Cross size={40} color="#fff"></Cross></i>
+            
+//         //     <div className={active ? 'menu-overlay' : 'menu-overlay-hidden'}>
+//         //         <Links active={active} links={links}></Links>
+//         //     </div>
+//         // </>
+       
+//     )
+// }
+
+// export default Menu;
