@@ -74,30 +74,37 @@ export default function Home(props: any)
   return(
 
     <>
-            <Head>
-                <title>LSHC - Home</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-            </Head>
-            
-            <main>
-                <div className="hero">
-                    <Nav/>  
-                    {/* <div className="g-container">
-                        <div className="hero-title">
-                            <h1>La Salle<br/>Handball<br/>Club</h1>
-                        </div>
-                    </div>
+      <Head>
+          <title>LSHC - Home</title>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      
+      
 
-                    <div className="hero-email">
-                        <hr></hr>
-                        <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-                    </div> */}
-                </div>
+      <main>
+          <div className="hero">
+         
+            <Nav/>
+             <div className="g-container">
 
-               
-                <Footer></Footer>
-            </main>
-        </>
+
+                <div className="hero-title">
+                    <h1>La Salle<br/>Handball<br/>Club</h1>
+                </div> 
+            </div>
+{/*
+            <div className="hero-email">
+                <hr></hr>
+                <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
+            </div> */}
+          </div>
+
+          
+          
+      </main>
+
+      {/* <Footer></Footer> */}
+    </>
     // <>
     //   {
     //     props.leaderboards.map(
