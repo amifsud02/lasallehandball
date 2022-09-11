@@ -91,10 +91,10 @@ export default function Home(props: any)
             </div> 
           </div>
               
-          <div className="hero-email">
+          {/* <div className="hero-email">
             <hr></hr>
             <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-          </div>
+          </div> */}
         </section>
       </main>
     </>
