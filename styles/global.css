@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@900&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  /* background-color: rgba(181, 104, 218, 0.247); */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body
+{
+  background: #F7F7F7;
+  font-family: 'Raleway', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container
+{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.d-hidden
+{
+  display: none;
+}
+
+.menu-outline
+{
+  display: none;
+}
+
+.menu-close
+{
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+}
+
+.hero-title h1
+{
+  font-family: 'Roboto', sans-serif;
+  font-size: 4em;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  line-height: 85%;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+}
+
+#w-75
+{
+  width: 7.5%;
+}
+
+#w-425
+{
+  width: 47.5%;
+}
+
+.promo-banner
+{
+  background: -moz-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  background: -webkit-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  background: linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1); 
+}
+
+.promo-banner .parent
+{
+  flex-direction: row;
+  height: 150px;
+  position: relative;
+}
+
+.promo-banner .pb-title
+ {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  letter-spacing: 1.5px;
+ }
+
+ .pb-button
+ {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%); 
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 15px 40px;
+  color: white;
+  font-size: .8em;
+  font-weight: 800;
+  height: 50px;
+}
+
+.page-header
+{
+    /* position: fixed;
+    top: 0; */
+    width: 100vw;
+    height: 400px;
+    z-index: -1;
+    background: rgb(1,41,111), url('../public/template.svg') no-repeat center;
+    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36, .95) 100%), url('../public/template.svg') no-repeat center;
+    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,.95) 100%),  url('../public/template.svg') no-repeat center;
+    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,.95) 100%), url('../public/template.svg') no-repeat center;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
+    background-size: cover;
+}
+
+.page-header-info
+{
+  padding-top: 50px;
+}
+
+.page-title
+{
+  color: white;
+  text-transform: uppercase;
+  font-size: 4em;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+}
+
+.page-map
+{
+  color: white;
+  text-transform: uppercase;
+}
+
+.page-content-body-text p
+{
+  text-align: justify;
+  margin: 20px 0;
+}
+
+.page-content-body-text span li
+{
+  margin-left: 50px;
+  list-style: square;
+}

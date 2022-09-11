@@ -75,26 +75,28 @@ export default function Home(props: any)
     <>
       <Head>
           <title>LSHC - Home</title>
-          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+          <meta 
+            name = "viewport" 
+            content = "initial-scale=1.0, width=device-width, user-scalable=no"
+          />
+      </Head>  
 
       <main>
         <section className="hero">
           <Nav/>             
 
-          <div className="container">
+        <div className="container">
             <div className="hero-title d-flex">
               <h1>La Salle<br/>Handball<br/>Club</h1>
             </div> 
           </div>
               
-          {/* <div className="hero-email">
+          <div className="hero-email">
             <hr></hr>
             <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-          </div> */}
+          </div>
         </section>
       </main>
-      {/* <Footer></Footer> */}
     </>
   )
 }
@@ -111,3 +113,23 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 }
+
+
+
+      {/* <main>
+        <section classNameName="hero">
+          <Nav/>             
+
+        <div classNameName="container">
+            <div classNameName="hero-title d-flex">
+              <h1>La Salle<br/>Handball<br/>Club</h1>
+            </div> 
+          </div>
+              
+          <div classNameName="hero-email">
+            <hr></hr>
+            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
+          </div>
+        </section>
+      </main> */}
+      {/* <Footer></Footer> */}
