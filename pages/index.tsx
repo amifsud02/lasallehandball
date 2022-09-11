@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next/types"
-import React from "react"
+import React, { useEffect } from "react"
 import { supabase } from "../utils/supabaseClient"
 
 import Nav from "../components/Nav/Nav";
@@ -9,6 +9,7 @@ import Tab from "../components/Tab/Tab";
 import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Footer from "../components/Footer/Footer";
+import Layout from "../components/Layout/Layout";
 
 
 export type Teams = {
@@ -71,16 +72,17 @@ export type Match = {
 
 export default function Home(props: any)
 { 
-  return(
-    <>
-      <Head>
-          <title>LSHC - Home</title>
-          <meta 
-            name = "viewport" 
-            content = "initial-scale=1.0, width=device-width, user-scalable=no"
-          />
-      </Head>  
+  useEffect(() => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    console.log(vh);
+  }, []);
+  
 
+  // document.addEventListener('touchmove', function() { e.preventDefault(); }, { passive:false });
+  return(
+
+    <Layout title="Home - La Salle HC"> 
       <main>
         <section className="hero">
           <Nav/>             
@@ -97,7 +99,7 @@ export default function Home(props: any)
           </div> */}
         </section>
       </main>
-    </>
+    </Layout>
   )
 }
      

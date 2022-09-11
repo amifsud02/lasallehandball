@@ -43,14 +43,26 @@ const Links: React.FC<{ links: LinkType[] }> = ( {links} ) => {
 const Nav: React.FC<{}> = () => {
  
     const [isOpen, setOpen] = useState(false);
-
+    
     const handleClick = () => {
-        console.log(isOpen);
-        if(isOpen === true) {            
-            document.body.style.maxHeight = "none";
-            document.body.style.overflowY = 'scroll'; 
+                
+        if(isOpen === true) {         
+            document.addEventListener(
+                'touchmove', 
+
+                function(e) { 
+                    e.preventDefault();
+                    console.log('Touch')
+                },
+
+                { passive:false }
+            );   
+
+           // document.body.style.maxHeight = "none";
+           // document.body.style.overflowY = 'scroll'; 
         }   
         else {
+            document.removeEventListener('touchmove', function(e) { e.preventDefault(); });
             document.body.style.maxHeight = "100vh";
             document.body.style.overflowY = "hidden";     
         }
