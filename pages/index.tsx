@@ -98,6 +98,20 @@ export default function Home(props: any)
             <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
           </div> */}
         </section>
+
+        <section className="test">     
+
+          <div className="container">
+              <div className="hero-title d-flex">
+                <h1>La Salle<br/>Handball<br/>Club</h1>
+              </div> 
+            </div>
+              
+          {/* <div className="hero-email">
+            <hr></hr>
+            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
+          </div> */}
+        </section>
       </main>
     </Layout>
   )

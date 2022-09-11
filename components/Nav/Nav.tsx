@@ -49,8 +49,8 @@ const Nav: React.FC<{}> = () => {
         if(isOpen === true) {         
             document.removeEventListener('touchmove', function(e) { e.preventDefault(); });
 
-           // document.body.style.maxHeight = "none";
-           // document.body.style.overflowY = 'scroll'; 
+           document.body.style.maxHeight = "none";
+           document.body.style.overflowY = 'scroll'; 
         }   
         else {            
             document.addEventListener(
@@ -64,8 +64,8 @@ const Nav: React.FC<{}> = () => {
                 { passive:false }
             ); 
 
-            // document.body.style.maxHeight = "100vh";
-            // document.body.style.overflowY = "hidden";     
+            document.body.style.maxHeight = "100vh";
+            document.body.style.overflowY = "hidden";     
         }
     }
         

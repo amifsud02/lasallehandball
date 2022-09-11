@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Nav from "../Nav/Nav";
 
 export type Props = {
     title: string;
