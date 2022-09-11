@@ -16,6 +16,7 @@ body
     background: #F7F7F7;
     font-family: 'Raleway', sans-serif;
     scroll-behavior: smooth;
+    height: 100%;
 } 
 
 a {
@@ -37,4 +38,5 @@ button
 .test
 {
   height: 1000px;
+  background: paleturquoise;
 }
