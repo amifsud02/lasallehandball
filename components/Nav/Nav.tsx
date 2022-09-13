@@ -46,11 +46,12 @@ const Nav: React.FC<{}> = () => {
     
     const handleClick = () => {
                 
+        document.body.style.maxHeight = "none";
+        document.body.style.overflowY = 'scroll'; 
+
         if(isOpen === true) {         
             document.removeEventListener('touchmove', function(e) { e.preventDefault(); });
-
-           document.body.style.maxHeight = "none";
-           document.body.style.overflowY = 'scroll'; 
+            console.log("True")
         }   
         else {            
             document.addEventListener(
