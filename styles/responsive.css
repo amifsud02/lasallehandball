@@ -3,11 +3,17 @@
     z-index: 99;
 }
 
+.navbar-brand.active{
+    position: fixed;
+}
+
 .navbar-hamburger
 {
     display: none;
     z-index: 99;
 }
+
+
 
 /* Media Query and display navbar hamburger */
 
@@ -22,6 +28,11 @@
     {
         display: block;
     }
+
+    .navbar-hamburger.active{
+        position: fixed;
+        right: 10%;
+    } 
 
     .navbar-menu 
     {

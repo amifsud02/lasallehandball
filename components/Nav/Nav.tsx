@@ -44,36 +44,30 @@ const Nav: React.FC<{}> = () => {
  
     const [isOpen, setOpen] = useState(false);
     
-    const handleClick = () => {
-                
-        document.body.style.maxHeight = "none";
-        document.body.style.overflowY = 'scroll'; 
+    // const handleClick = () => {
+            
+    //     if(isOpen === true) {         
+    //         document.removeEventListener('touchmove', function(e) { e.preventDefault(); });
+    //         console.log("True")
+    //     }   
+    //     else {            
+    //         document.addEventListener(
+    //             'touchmove', 
 
-        if(isOpen === true) {         
-            document.removeEventListener('touchmove', function(e) { e.preventDefault(); });
-            console.log("True")
-        }   
-        else {            
-            document.addEventListener(
-                'touchmove', 
+    //             function(e) { 
+    //                 e.preventDefault();
+    //                 console.log('Touch')
+    //             },
 
-                function(e) { 
-                    e.preventDefault();
-                    console.log('Touch')
-                },
-
-                { passive:false }
-            ); 
-
-            document.body.style.maxHeight = "100vh";
-            document.body.style.overflowY = "hidden";     
-        }
-    }
+    //             { passive:false }
+    //         ); 
+    //     }
+    // }
         
     return (
         <div className="navbar-bg">
             <div className='navbar'>
-                <div className='navbar-brand'>
+                <div className={`navbar-brand ${isOpen ? 'active' : ''}`}>
                     <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
                 </div>
 
@@ -81,7 +75,8 @@ const Nav: React.FC<{}> = () => {
                     <Links links={links}></Links>
                 </div>
 
-                <div className='navbar-hamburger' onClick={handleClick}>
+                <div className={`navbar-hamburger ${isOpen ? 'active' : ''}`}> 
+                {/* onClick={handleClick}> */}
                     <Hamburger 
                         size={40} 
                         color="#fff" 
