@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next/types"
-import React, { useEffect } from "react"
+import React, { useEffect, useRef } from "react"
 import { supabase } from "../utils/supabaseClient"
 
 import Nav from "../components/Nav/Nav";
@@ -15,6 +15,7 @@ import Layout from "../components/Layout/Layout";
 export type Teams = {
   id: number;
   teamName: string;
+  teamLogo: string;
 }
 
 export type Competitions = {
@@ -72,7 +73,28 @@ export type Match = {
 
 export default function Home(props: any)
 { 
+
+  let observer: any = null
+ 
   useEffect(() => {
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+        else
+        {
+          entry.target.classList.remove("show");
+        }
+      });
+    });
+    
+    const hiddenElements = document.querySelectorAll(".hidden");
+    hiddenElements.forEach((element) => {
+      observer.observe(element)
+      console.log(element);
+    });
+ 
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     console.log(vh);
@@ -88,7 +110,7 @@ export default function Home(props: any)
           <Nav/>             
 
         <div className="container">
-            <div className="hero-title d-flex">
+            <div className="hero-title d-flex hidden">
               <h1>La Salle<br/>Handball<br/>Club</h1>
             </div> 
           </div>
@@ -99,18 +121,46 @@ export default function Home(props: any)
           </div> */}
         </section>
 
-        <section className="test">     
+        <section>
+          <div className="parent">
+              <h1 className="title">Latest Matches</h1>
 
-          <div className="container">
-              <div className="hero-title d-flex">
-                <h1>La Salle<br/>Handball<br/>Club</h1>
-              </div> 
-            </div>
-              
-          {/* <div className="hero-email">
-            <hr></hr>
-            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-          </div> */}
+                <Tabs redirect="/matches">
+                  <Tab title="National League">
+                    <Matches props={props.matches} cid="National League"></Matches>
+                  </Tab>
+
+                  <Tab title="MHA Cup">
+                    <Matches props={props.matches} cid="MHA Cup"></Matches>
+                  </Tab>
+
+                  <Tab title="Friendlies">
+                    <Matches props={props.matches} cid="Friendlies"></Matches>
+                  </Tab>
+                </Tabs>
+          </div>
+                    
+          <div className="parent">
+              <h1 className="title">Standings</h1>
+
+              <Tabs redirect="/team">
+                  <Tab title="National League Men">
+                      <Leaderboard props={props.leaderboards} cid={"Men"}/>
+                  </Tab>
+
+                  <Tab title="National League Women">
+                      <Leaderboard props={props.leaderboards} cid={"Women"}/>
+                  </Tab>
+
+                  <Tab title="U21 Men">
+                      <Leaderboard props={props.leaderboards} cid={"U21 Men"}/>
+                  </Tab>
+
+                  <Tab title="U21 Women">
+                      <Leaderboard props={props.leaderboards} cid={"U21 Women"}/>
+                  </Tab>
+              </Tabs>
+          </div>
         </section>
       </main>
     </Layout>
@@ -119,8 +169,10 @@ export default function Home(props: any)
      
 
 export const getStaticProps: GetStaticProps = async () => {
-  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName), awayTeam!inner(teamName), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Not Started').order('date', { ascending: true })
+  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
+  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Not Started').order('date', { ascending: true })
+
+  console.log(leaderboards)
 
   return{
     props: {

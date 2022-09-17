@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Footer from "../Footer/Footer";
 
 export type Props = {
     title: string;
@@ -12,6 +13,7 @@ export default function Layout(props: Props){
                 <title>{props.title}</title>
             </Head>
             {props.children}
+            <Footer></Footer>
         </>
     )
 }

@@ -5,4 +5,10 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig, 
+  images: {
+    domains: ['jcyieqmvxhldriyzfmdp.supabase.co'],
+    formates: ['image/avif', 'image/webp', 'image/jpeg', 'image/png'],
+  }
+}

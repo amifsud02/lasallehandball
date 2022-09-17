@@ -99,11 +99,13 @@
 }
 
 .team-badge {
-  background: grey;
-  height: 42px;
-  width: 42px;
-  border-radius: 50%;
   margin: 30px;
+}
+
+.lb-team .team-info .team-badge
+{
+  margin: 0;
+  margin-right: 30px;
 }
 
 .team-name {
@@ -188,6 +190,13 @@ td
 {
   font-weight: 700;
   letter-spacing: 0.6px;
+}
+
+.team-info
+{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 table

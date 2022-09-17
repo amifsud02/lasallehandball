@@ -1,4 +1,5 @@
 import { Leaderboards } from '../../pages';
+import Image from 'next/image';
 
 export default function Leaderboard({props, cid}: {props: any, cid: string})
 {   
@@ -29,7 +30,16 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                             return(
                                 <tr className="lb-row" key={leaderboard.id}>
                                     <td className="lb-pos">{index}</td>
-                                    <td className="lb-team">{leaderboard.teams.teamName}</td>
+                                    <td className="lb-team">
+                                        <div className="team-info">
+                                            <div className="team-badge">
+                                                {leaderboard.teams.teamLogo != null ? (
+                                                    <Image src={leaderboard.teams.teamLogo} alt={leaderboard.teamName} width={60} height={60} />
+                                                ): ''}
+                                            </div>
+                                            {leaderboard.teams.teamName}   
+                                        </div>
+                                    </td>
                                     <td className="c-text">{leaderboard.played}</td>
                                     <td className="c-text">{leaderboard.wins}</td>
                                     <td className="c-text">{leaderboard.draws}</td>
