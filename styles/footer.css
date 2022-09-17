@@ -21,7 +21,33 @@
 
 .f-info
 {
-    padding: 5px 0 ;
+    padding: 5px 0;
+}
+
+.fc-40
+{
+    width: 40%;
+}
+
+.fc-30
+{
+    width: 30%;
+}
+
+.fc-flex
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.fc-center
+{
+    align-items: center;
+}
+
+.fc-right
+{
+    align-items: flex-end;
 }
 
 .sub-footer
@@ -35,4 +61,46 @@
     color: #999999;
     font-size: 12px;
     letter-spacing: .0em;
+}
+
+
+@media screen and (max-width: 1440px)
+{
+    .footer-content
+    {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 778px) {
+    .footer-content{
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    
+    .fc-40, .fc-30
+    {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .fc-ws
+    {
+        margin: 25px;
+    }
+    
+    .title
+    {
+        font-size: 1.15em;
+        letter-spacing: 1px;
+    }
+
+    .sub-footer
+    {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
 }

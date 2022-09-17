@@ -3,12 +3,12 @@ const Footer = () => {
         <footer>
             <div className="main-footer">
                 <div className="footer-content">
-                    <div>
+                    <div className="fc-40 fc-flex fc-ws">
                         <div className="title">La Salle Handball Club</div>
                         <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
                         <div>Social Media Icons</div>
                     </div>
-                    <div>
+                    <div className="fc-30 fc-flex fc-center fc-ws">
                         <div className="title">Quick Links</div>
                         <ul>
                             <li>Home</li>
@@ -20,7 +20,7 @@ const Footer = () => {
                             <li>Contact Us</li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="fc-30 fc-flex fc-right fc-ws">
                         <div className="title">Contact Us</div>
                         <div className="f-info"><a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a></div>
                         <div className="f-info">Mobile</div>
