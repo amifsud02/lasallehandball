@@ -5,6 +5,8 @@
   margin: 75px auto;
 }
 
+
+
 .title {
   font-weight: 900;
   font-size: 16px;
@@ -202,4 +204,42 @@ td
 table
 {
   border-collapse: collapse; 
+}
+
+
+
+@media screen and (max-width: 1440px )
+{
+  .parent {
+    width: 80%;
+  }
+
+   
+}
+
+@media screen and (max-width: 772px)
+{
+  .parent {
+    width: 90%;
+  }
+
+  .team-badge
+  {
+    height: 45px;
+    width: 45px;
+  }
+  
+  .lb-team .team-info .team-badge
+  {
+    margin-right: 15px;
+  }
+
+  .c-hidden{
+    display: none;
+  }
+
+  .c-text
+  {
+    font-size: .75em;
+  }
 }

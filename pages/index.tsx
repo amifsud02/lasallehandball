@@ -139,7 +139,9 @@ export default function Home(props: any)
                   </Tab>
                 </Tabs>
           </div>
-                    
+        </section>
+
+        <section>     
           <div className="parent">
               <h1 className="title">Standings</h1>
 
@@ -162,6 +164,7 @@ export default function Home(props: any)
               </Tabs>
           </div>
         </section>
+        
       </main>
     </Layout>
   )

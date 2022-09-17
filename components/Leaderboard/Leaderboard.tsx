@@ -13,10 +13,10 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                         <th id="w-75"><span title="Position">Pos</span></th>
                         <th id="w-425"><span title="Team">Team</span></th>
                         <th className="c-text" id="w-75"><span title="Games Played">GP</span></th>
-                        <th className="c-text" id="w-75"><span title="Games Won">W</span></th>
-                        <th className="c-text" id="w-75"><span title="Games Drew">D</span></th>
-                        <th className="c-text" id="w-75"><span title="Games Lost">L</span></th>
-                        <th className="c-text" id="w-75"><span title="Goal Difference">GD</span></th>
+                        <th className="c-text c-hidden" id="w-75"><span title="Games Won">W</span></th>
+                        <th className="c-text c-hidden" id="w-75"><span title="Games Drew">D</span></th>
+                        <th className="c-text c-hidden" id="w-75"><span title="Games Lost">L</span></th>
+                        <th className="c-text c-hidden" id="w-75"><span title="Goal Difference">GD</span></th>
                         <th className="c-text" id="w-75"><span title="Points">PTS</span></th>
                     </tr>
                 </thead>
@@ -41,11 +41,11 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                                         </div>
                                     </td>
                                     <td className="c-text">{leaderboard.played}</td>
-                                    <td className="c-text">{leaderboard.wins}</td>
-                                    <td className="c-text">{leaderboard.draws}</td>
-                                    <td className="c-text">{leaderboard.losses}</td>
-                                    <td className="c-text">{leaderboard.goalDifference}</td>
-                                    <td className="c-text">{leaderboard.points}</td>
+                                    <td className="c-text c-hidden">{leaderboard.wins}</td>
+                                    <td className="c-text c-hidden">{leaderboard.draws}</td>
+                                    <td className="c-text c-hidden">{leaderboard.losses}</td>
+                                    <td className="c-text c-hidden">{leaderboard.goalDifference}</td>
+                                    <td className="c-text ">{leaderboard.points}</td>
                                 </tr> 
                             )
                             
