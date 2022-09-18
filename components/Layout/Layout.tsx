@@ -11,6 +11,7 @@ export default function Layout(props: Props){
         <>
             <Head>
                 <title>{props.title}</title>
+                <meta name="apple-mobile-web-app-capable" content="yes" />
             </Head>
             {props.children}
             <Footer></Footer>

@@ -9,7 +9,10 @@ import '../styles/Nav.css'
 import '../styles/Hero.css'
 import '../styles/matches.css'
 import '../styles/footer.css'
+import '../styles/undermaintanence.css'
 
+// Animate.css
+import 'animate.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />

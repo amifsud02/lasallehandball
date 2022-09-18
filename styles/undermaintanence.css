@@ -19,15 +19,16 @@ body
   scroll-behavior: smooth;
 }
 
-.hero
+.um-hero
 {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: rgb(1,41,111), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%),  url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
-    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url(https://www.fcbarcelona.com/fcbarcelona/photo/2018/06/12/4a098446-7a20-4a9d-bcff-8049151f085b/MSvZLGyv.jpg) no-repeat center;
+    
+    background: rgb(1,41,111), url('../public/la-salle-hero.jpg') no-repeat center;
+    background: -moz-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url('../public/la-salle-hero.jpg') no-repeat center;
+    background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%),  url('../public/la-salle-hero.jpg') no-repeat center;
+    background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url('../public/la-salle-hero.jpg') no-repeat center;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
 
     display: flex;
@@ -37,7 +38,7 @@ body
 
 }
 
-hr {
+.um-hero hr {
     width: 16.3em;
     margin-right: 2em;
     height: 3px;
@@ -50,14 +51,14 @@ hr {
     width: 75%;
 }
 
-.container {
+.um-sub-container {
     position: absolute;
     top: 15%;  
     left: 50%;
     transform: translateX(-50%);  
 }
 
-.content
+.um-hero .content
 {
     position: absolute;
     top: 50%;
@@ -72,7 +73,7 @@ hr {
     letter-spacing: 0.8px;
 }
 
-.title
+.um-hero .title
 {
     font-size: 60px;
     font-weight: 900;
@@ -118,7 +119,7 @@ hr {
 
     }
 
-    hr
+    .um-hero hr
     {
         
         margin: auto;

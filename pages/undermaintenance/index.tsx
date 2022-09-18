@@ -3,9 +3,9 @@
 function UnderMaintenancePage(){
     return(
         <>
-            <main className="hero">
+            <main className="um-hero">
                 <div className="um-container">
-                    <div className="container">
+                    <div className="um-sub-container">
                         <img src="./lshc.png" width={150}></img>
                     </div>
                     <div className="content">

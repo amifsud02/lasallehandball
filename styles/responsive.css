@@ -5,6 +5,7 @@
 
 .navbar-brand.active{
     position: fixed;
+
 }
 
 .navbar-hamburger
@@ -45,9 +46,7 @@
         right: 0;
 
         width: 100%;
-        
         height: 100%;
-        /* height: calc(var(--vh, 1vh) * 100); */
 
         transform: translateY(-50%);
 

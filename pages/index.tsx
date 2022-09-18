@@ -74,49 +74,39 @@ export type Match = {
 export default function Home(props: any)
 { 
 
-  let observer: any = null
+  // let observer: any = null
  
-  useEffect(() => {
-    observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-        else
-        {
-          entry.target.classList.remove("show");
-        }
-      });
-    });
+  // useEffect(() => {
+  //   observer = new IntersectionObserver((entries) => {
+  //     entries.forEach((entry) => {
+  //       if (entry.isIntersecting) {
+  //         entry.target.classList.add("show");
+  //       }
+  //       else
+  //       {
+  //         entry.target.classList.remove("show");
+  //       }
+  //     });
+  //   });
     
-    const hiddenElements = document.querySelectorAll(".hidden");
-    hiddenElements.forEach((element) => {
-      observer.observe(element)
-      console.log(element);
-    });
- 
-    let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-    console.log(vh);
-  }, []);
+  //   const hiddenElements = document.querySelectorAll(".hidden");
+  //   hiddenElements.forEach((element) => {
+  //     observer.observe(element)
+  //     console.log(element);
+  //   });
+  // }, []);
   
-
-  // document.addEventListener('touchmove', function() { e.preventDefault(); }, { passive:false });
   return(
-
     <Layout title="Home - La Salle HC"> 
-      <main>
+      <main> 
         <section className="hero">
-
-          <div className="hero-content">
-            <Nav/>             
-
+          <Nav/> 
+          <div className="hero-content">  
             <div className="container">
-              <div className="hero-title d-flex hidden">
+              <div className="animate__animated animate__backInLeft hero-title d-flex ">
                 <h1>La Salle<br/>Handball<br/>Club</h1>
               </div> 
             </div>
-                
             <div className="hero-email">
               <hr></hr>
               <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
@@ -187,23 +177,3 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   }
 }
-
-
-
-      {/* <main>
-        <section classNameName="hero">
-          <Nav/>             
-
-        <div classNameName="container">
-            <div classNameName="hero-title d-flex">
-              <h1>La Salle<br/>Handball<br/>Club</h1>
-            </div> 
-          </div>
-              
-          <div classNameName="hero-email">
-            <hr></hr>
-            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-          </div>
-        </section>
-      </main> */}
-      {/* <Footer></Footer> */}
