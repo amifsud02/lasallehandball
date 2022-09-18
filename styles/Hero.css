@@ -10,8 +10,7 @@
     background: -webkit-linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%),  url('../public/la-salle-hero.jpg') no-repeat center;
     background: linear-gradient(125deg, rgba(1,41,111,1) 0%, rgba(0,13,36,0.83) 100%), url('../public/la-salle-hero.jpg') no-repeat center;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1);
-    
-    background-attachment: fixed;
+
     background-size: cover;
 }
 
