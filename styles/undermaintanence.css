@@ -7,10 +7,6 @@
   /* background-color: rgba(181, 104, 218, 0.247); */
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 html,
 body
 {
