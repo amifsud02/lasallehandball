@@ -11,7 +11,7 @@ export default function Matches({props, cid}: {props: any, cid: string})
                 if(match.competitions.competitionTypes.competitionName == cid)
                 { 
                     return(
-                        <div className="match" key={match.id.toString()}>
+                        <li className="match" key={match.id.toString()}>
                             <div className="home-team">
                                 <div className="team-badge">
                                     <Image src={match.homeTeam.teamLogo} alt={match.homeTeam.teamName} width={60} height={60} />
@@ -38,7 +38,7 @@ export default function Matches({props, cid}: {props: any, cid: string})
                                     <Image src={match.awayTeam.teamLogo} alt={match.awayTeam.teamName} width={60} height={60} />
                                 </div>
                             </div>
-                        </div>
+                        </li>
                     )
                 }
                 else

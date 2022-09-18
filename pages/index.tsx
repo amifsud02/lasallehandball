@@ -107,18 +107,21 @@ export default function Home(props: any)
     <Layout title="Home - La Salle HC"> 
       <main>
         <section className="hero">
-          <Nav/>             
 
-        <div className="container">
-            <div className="hero-title d-flex hidden">
-              <h1>La Salle<br/>Handball<br/>Club</h1>
-            </div> 
+          <div className="hero-content">
+            <Nav/>             
+
+            <div className="container">
+              <div className="hero-title d-flex hidden">
+                <h1>La Salle<br/>Handball<br/>Club</h1>
+              </div> 
+            </div>
+                
+            <div className="hero-email">
+              <hr></hr>
+              <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
+            </div>
           </div>
-              
-          {/* <div className="hero-email">
-            <hr></hr>
-            <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-          </div> */}
         </section>
 
         <section>
@@ -173,7 +176,7 @@ export default function Home(props: any)
 
 export const getStaticProps: GetStaticProps = async () => {
   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Not Started').order('date', { ascending: true })
+  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Full Time').order('date', { ascending: true })
 
   console.log(leaderboards)
 

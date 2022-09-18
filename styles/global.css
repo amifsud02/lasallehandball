@@ -7,7 +7,8 @@
   /* background-color: rgba(181, 104, 218, 0.247); */
 }
 
-::-webkit-scrollbar {
+body::-webkit-scrollbar
+{
   display: none;
 }
 
@@ -17,6 +18,7 @@ body
   background: #F7F7F7;
   font-family: 'Raleway', sans-serif;
   scroll-behavior: smooth;
+  overflow-x: hidden ;
 }
 
 a {
@@ -49,19 +51,6 @@ a {
   font-size: 30px;
 }
 
-.hero-title h1
-{
-  font-family: 'Roboto', sans-serif;
-  font-size: 4em;
-  font-weight: 900;
-  color: white;
-  text-transform: uppercase;
-  line-height: 85%;
-  letter-spacing: 1px;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: white;
-}
-
 #w-75
 {
   width: 7.5%;
@@ -71,6 +60,23 @@ a {
 {
   width: 47.5%;
 }
+
+
+.showAll
+{
+  white-space: nowrap;
+  color:rgba(0,13,36, .95)
+}
+
+@media screen and (max-width: 450px){
+ 
+
+  .lb-row .team-info .team-badge
+  {
+    display: none;
+  }
+}
+
 
 .promo-banner
 {
@@ -159,4 +165,37 @@ a {
 {
   margin-left: 50px;
   list-style: square;
+}
+
+
+/* 
+  TAB __ CONTENT
+*/
+
+.tabs__wrapper{
+  margin-bottom: 30px;
+}
+
+.nav__tab{
+  position: relative;
+}
+
+
+/* Firefox */
+
+
+/* Chrome, Edge, and Safari */
+.nav__tab::-webkit-scrollbar {
+  height: 4px;
+  border-radius: 10px;
+}
+
+.nav__tab::-webkit-scrollbar-track { 
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.nav__tab::-webkit-scrollbar-thumb {
+  background-color: #01296f;
+  border-radius: 10px;
 }

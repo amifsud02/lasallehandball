@@ -2,7 +2,7 @@
 {
     width: 100vw;
     height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
+    /* height: calc(var(--vh, 1vh) * 100); */
     z-index: -1;
     
     background: rgb(1,41,111), url('../public/la-salle-hero.jpg') no-repeat center;
@@ -15,8 +15,13 @@
     background-size: cover;
 }
 
+.hero-content{
+    position: relative;
+    height: 100%;
+}
+
 hr {
-    width: 16.3em;
+    width: 20vw;
     margin-right: 2em;
     height: 3px;
     background-color: white;
@@ -25,6 +30,20 @@ hr {
 a{
     color: white;
 }
+
+.hero-title h1
+{
+  font-family: 'Roboto', sans-serif;
+  font-size: 7em;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  line-height: 85%;
+  letter-spacing: 1px;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: white;
+}
+
 
 .hero-email
 {
@@ -41,6 +60,39 @@ a{
 {
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1440px) {
+
+    .hero-title h1
+    {
+        font-size: 5.5em;
+    }
+}
+
+@media screen and (max-width: 776px) {
+    .hero .container{
+        width: 75%;
+    }
+
+    .hero-title h1
+    {
+        font-size: 4.5em;
+        line-height: 85%;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    .hero .container{
+        width: 90%;
+    }
+
+    .hero-title h1
+    {
+        font-size: 4em;
+        line-height: 85%;
+    }
+
 }

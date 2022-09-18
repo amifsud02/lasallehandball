@@ -29,7 +29,7 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
 
                             return(
                                 <tr className="lb-row" key={leaderboard.id}>
-                                    <td className="lb-pos">{index}</td>
+                                    <td className="lb-pos c-text">{index}</td>
                                     <td className="lb-team">
                                         <div className="team-info">
                                             <div className="team-badge">

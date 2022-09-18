@@ -5,8 +5,6 @@
   margin: 75px auto;
 }
 
-
-
 .title {
   font-weight: 900;
   font-size: 16px;
@@ -26,9 +24,10 @@
 }
 
 .category button {
+  margin-bottom: 20px;
   margin-right: 30px;
   padding-bottom: 5px;
-  margin-bottom: 50px;
+  white-space: nowrap;
 }
 
 .tablinks.active::before
@@ -171,7 +170,7 @@ tr
 
 td
 {
-  padding: 30px; 
+  padding: 20px; 
   font-size: 12px;
   font-weight: 500; 
   text-transform: uppercase;
@@ -213,8 +212,6 @@ table
   .parent {
     width: 80%;
   }
-
-   
 }
 
 @media screen and (max-width: 772px)
@@ -242,4 +239,33 @@ table
   {
     font-size: .75em;
   }
+
+  .home-team{
+    flex-direction: column;
+  }
+
+  .away-team{
+    flex-direction: column-reverse;
+  }
+
+  .home-team .team-badge, .away-team .team-badge{
+    margin: 15px;
+  }
 }
+
+@media screen and (max-width: 700px)
+{
+  .parent ul{
+    overflow-x: scroll;
+  }
+
+}
+
+
+@media screen and (max-width: 450px)
+{
+  td{
+    padding: 20px;
+  }
+}
+
