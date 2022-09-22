@@ -12,15 +12,6 @@ body::-webkit-scrollbar
   display: none;
 }
 
-html,
-body
-{
-  background: #F7F7F7;
-  font-family: 'Raleway', sans-serif;
-  scroll-behavior: smooth;
-  overflow-x: hidden ;
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -80,7 +71,7 @@ a {
 
 .promo-banner
 {
-  background: -moz-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
+  background: -moz-linear-gradient(125deg, rgba(1,41,111) 0%, hwb(218 0% 86%) 100%);
   background: -webkit-linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
   background: linear-gradient(125deg, rgba(1,41,111) 0%, rgba(0,13,36) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#01296f",endColorstr="#000d24",GradientType=1); 
@@ -185,7 +176,7 @@ a {
 
 
 /* Chrome, Edge, and Safari */
-.nav__tab::-webkit-scrollbar {
+/* .nav__tab::-webkit-scrollbar {
   height: 4px;
   border-radius: 10px;
 }
@@ -198,4 +189,4 @@ a {
 .nav__tab::-webkit-scrollbar-thumb {
   background-color: #01296f;
   border-radius: 10px;
-}
+} */

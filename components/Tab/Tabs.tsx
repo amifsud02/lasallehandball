@@ -5,9 +5,10 @@ import TabTitle from "./TabTitle";
 type Props = {
   children: ReactElement[];
   redirect: string;
+  showall: boolean;
 };
 
-const Tabs: React.FC<Props> = ({ children, redirect }) => {
+const Tabs: React.FC<Props> = ({ children, redirect, showall }) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   return (
@@ -27,9 +28,10 @@ const Tabs: React.FC<Props> = ({ children, redirect }) => {
             ))}
           </div>
 
-          <Link href={redirect}>
-              <a className="showAll">Show All</a>
-          </Link>
+          { showall ? <Link href={redirect}><a className="show-all">Show All</a></Link> : null }
+          {/* <Link href={redirect}>
+              <a className="show-all">Show All</a>
+          </Link> */}
         </ul>
       </div>
 

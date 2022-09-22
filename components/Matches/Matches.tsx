@@ -29,7 +29,6 @@ export default function Matches({props, cid}: {props: any, cid: string})
                                 </div>
                                 <div className="match-status">
                                     {match.status}
-                                    {match.date}
                                 </div>
                             </div>
                             <div className="away-team">

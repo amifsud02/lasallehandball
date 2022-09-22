@@ -118,7 +118,7 @@ export default function Home(props: any)
           <div className="parent">
               <h1 className="title">Latest Matches</h1>
 
-                <Tabs redirect="/matches">
+                <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
                     <Matches props={props.matches} cid="National League"></Matches>
                   </Tab>
@@ -138,7 +138,7 @@ export default function Home(props: any)
           <div className="parent">
               <h1 className="title">Standings</h1>
 
-              <Tabs redirect="/team">
+              <Tabs redirect="/team" showall={false}>
                   <Tab title="National League Men">
                       <Leaderboard props={props.leaderboards} cid={"Men"}/>
                   </Tab>
