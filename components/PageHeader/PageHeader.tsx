@@ -1,5 +1,5 @@
 import Nav from "../Nav/Nav";
-
+import Image from 'next/image'
 type PageProps = {
     pageName: string;
 }
@@ -17,8 +17,6 @@ const PageHeader = ({pageName}: PageProps) => {
                 </div>
             </div>
         </>
-
-
     );
 }
 
