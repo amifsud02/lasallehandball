@@ -12,6 +12,7 @@ import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Footer from "../components/Footer/Footer";
 import Layout from "../components/Layout/Layout";
+import MiniGallery from "../components/MiniGallery/MiniGallery";
 
 
 export type Teams = {
@@ -159,19 +160,8 @@ export default function Home(props: any)
               </Tabs>
           </div>
         </section>
-        
-        <section className="promo-banner">
-          <div className="pb-parent">
-            <div className="pb-title">
-              Become Part of a great team
-            </div>
-            <button className="pb-button">
-              Join Us
-            </button>
-          </div>
-        </section>
 
-        <section className="sponsor">
+         <section className="sponsor">
           <div className="slider">
             <div className="slide-track">
             <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
@@ -200,9 +190,25 @@ export default function Home(props: any)
             <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
             </div>
           </div>
-
+        </section>
+        
+        <section className="promo-banner">
+          <div className="pb-parent">
+            <div className="pb-title">
+              Become Part of a great team
+            </div>
+            <button className="pb-button">
+              Join Us
+            </button>
+          </div>
         </section>
 
+        <section className="s-gallery">
+          <div className="parent">
+            <h1 className="title">Gallery</h1>
+            <MiniGallery></MiniGallery>
+          </div>
+        </section>
       </main>
     </Layout>
   )
