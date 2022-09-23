@@ -78,7 +78,7 @@ function ContactPage(){
                         </Accordion>
                     </div>
                     <div style={{ margin: '50px 0'}}>
-                        <div style={{ }}>Can`&apos;`t find the answer you`&apos;`re looking for? Then fill in the form below.</div>
+                        <div style={{ }}>Can&apos;t find the answer you&apos;re looking for? Then fill in the form below.</div>
                         <form className="form-group">
                             <div className="form-input one c-small">
                                 <label>First Name</label>
