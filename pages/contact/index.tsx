@@ -23,7 +23,7 @@ function ContactPage(){
             <main>
                 <section className="parent">
                     <div>                        
-                        <Accordion square={true} style={{ boxShadow: '0px 1px 15px rgba(0,0,0,0.05)'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                        <Accordion square={true} style={{ boxShadow: '0px 1px 15px rgba(0,0,0,0.05)', fontFamily:'Raleway'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
                             <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
                                 <Typography style={{ fontWeight: 800, fontFamily: 'Raleway' }}>
                                     When are training sessions held?
