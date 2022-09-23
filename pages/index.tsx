@@ -75,30 +75,7 @@ export type Match = {
 
 
 export default function Home(props: any)
-{ 
-
-  // let observer: any = null
- 
-  // useEffect(() => {
-  //   observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("show");
-  //       }
-  //       else
-  //       {
-  //         entry.target.classList.remove("show");
-  //       }
-  //     });
-  //   });
-    
-  //   const hiddenElements = document.querySelectorAll(".hidden");
-  //   hiddenElements.forEach((element) => {
-  //     observer.observe(element)
-  //     console.log(element);
-  //   });
-  // }, []);
-  
+{   
   return(
     <Layout title="Home - La Salle HC"> 
       <main> 

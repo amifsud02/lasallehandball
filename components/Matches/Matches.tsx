@@ -1,5 +1,6 @@
 import { Match } from "../../pages"
 import Image from "next/image"
+
 export default function Matches({props, cid}: {props: any, cid: string})
 {       
     let counter = 0;

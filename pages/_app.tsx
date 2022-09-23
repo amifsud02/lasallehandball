@@ -11,7 +11,7 @@ import '../styles/matches.css'
 import '../styles/footer.css'
 import '../styles/undermaintanence.css'
 import '../styles/MiniGallery.css'
-
+import '../styles/contact.css'
 // Animate.css
 import 'animate.css'
 

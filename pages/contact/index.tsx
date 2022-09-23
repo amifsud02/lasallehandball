@@ -1,28 +1,121 @@
 import Footer from "../../components/Footer/Footer";
 import PageHeader from "../../components/PageHeader/PageHeader";
 
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useState } from "react";
+
 function ContactPage(){
+    const [expanded, setExpanded] = useState<string | false>(false);
+
+    const handleChange =
+    (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+        
+        setExpanded(isExpanded ? panel : false);
+    };
+
     return(
         <>
             <PageHeader pageName="Contact Us"/>
             <main>
-                <div>
-                    <form action="">
+                <section className="parent">
+                    <div>                        
+                        <Accordion square={true} style={{ boxShadow: '0px 1px 15px rgba(0,0,0,0.05)'}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                                <Typography style={{ fontWeight: 800, fontFamily: 'Raleway' }}>
+                                    When are training sessions held?
+                                </Typography>
+                            </AccordionSummary>
+
+                            <AccordionDetails>
+                                <Typography style={{ fontWeight: 500, fontFamily: 'Raleway',  fontSize: '15px' }}>
+                                    
+                                    • Training sessions are held on Tuesdays and Thursdays from 6:00pm to 8:00pm.<br/>
+                                    • Men - Every Tuesday and Thurday @ 8:30 at University Sports Hall<br/>
+                                    • U21 Men - Every Friday @ 5:30 at University Sports Hall
+                                    
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+
+                        <Accordion square={true} style={{ boxShadow: '0px 1px 15px rgba(0,0,0,0.05)'}} expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                                <Typography style={{ fontWeight: 800, fontFamily: 'Raleway' }}>
+                                    When are training sessions held?
+                                </Typography>
+                            </AccordionSummary>
+
+                            <AccordionDetails>
+                                <Typography style={{ fontWeight: 500, fontFamily: 'Raleway',  fontSize: '15px'}}>
+                                    
+                                        • Training sessions are held on Tuesdays and Thursdays from 6:00pm to 8:00pm. <br/>
+                                        • Men - Every Tuesday and Thurday @ 8:30 at University Sports Hall.<br/>
+                                        • U21 Men - Every Friday @ 5:30 at University Sports Hall
+                                    
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+
+                        <Accordion square={true} style={{ boxShadow: '0px 1px 15px rgba(0,0,0,0.05)'}} expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
+                            <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id="panel1a-header">
+                                <Typography style={{ fontWeight: 800, fontFamily: 'Raleway' }}>
+                                    When are training sessions held?
+                                </Typography>
+                            </AccordionSummary>
+
+                            <AccordionDetails>
+                                <Typography style={{ fontWeight: 500, fontFamily: 'Raleway',  fontSize: '15px'}}>
+                                    
+                                        • Training sessions are held on Tuesdays and Thursdays from 6:00pm to 8:00pm.<br/>
+                                        • Men - Every Tuesday and Thurday @ 8:30 at University Sports Hall<br/>
+                                        • U21 Men - Every Friday @ 5:30 at University Sports Hall
+                                    
+                                </Typography>
+                            </AccordionDetails>
+                        </Accordion>
+                    </div>
+                    <div style={{ margin: '50px 0'}}>
+                        <div style={{ }}>Can't find the answer you're looking for? Then fill in the form below.</div>
+                        <form className="form-group">
+                            <div className="form-input one c-small">
+                                <label>First Name</label>
+                                <input type="text" id="fname" name="fname" placeholder="Enter your first name"/>
+                            </div>
+                            
+                            <div className="form-input two c-small">
+                                <label>Last Name</label>
+                                <input type="text" id="fname" name="fname" placeholder="Enter your last name"/>
+                            </div>
+                            
+                            <div className="form-input three c-small">
+                                <label>Email</label>
+                                <input type="text" id="fname" name="fname" 
+                                    placeholder="Enter your email"/> 
+                            </div>
+                            
+                            <div className="form-input four c-small">
+                                <label>Phone Number</label>
+                                <input type="text" id="fname" name="fname"
+                                    placeholder="Enter your phone number"/>
+                            </div>    
+                            <div className="form-input five c-wide">
+                                <label>Message</label>
+                                <textarea 
+                                    id="fname" 
+                                    name="fname"
+                                    placeholder="Enter your message">
+                                </textarea>
+                            </div>
+                        </form> 
+
                         <div>
-                            <h4>Your Name</h4>
-                            <input type="text" placeholder="Enter Your Name"/>
+                            <p>or Email Us on <a href="mailto:info:lasallehandball.com" style={{color: 'black'}}>info@lasallehandball.com</a></p>                           
                         </div>
-                        <div>
-                            <h4>Your Email</h4>
-                            <input type="text" placeholder="Enter Your Email Address"/>
-                        </div>
-                        <div>
-                            <h4>Enquiry</h4>
-                            <textarea name="" id="" cols={30} rows={10} placeholder="Enter Your Enquiry"></textarea>
-                        </div>
-                    </form>
-                </div>
-               
+                    </div>
+               </section>
             </main>
             <Footer/>
         </>
