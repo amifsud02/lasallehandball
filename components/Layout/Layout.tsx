@@ -15,7 +15,7 @@ export default function Layout(props: Props){
                 <meta charSet="UTF-8"></meta>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
-                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
                 <meta name="title" content={`La Salle Handball Club - ${props.title}`}></meta> 
                 <meta name="description" content="An amateur club with a professional mentality."></meta> 
