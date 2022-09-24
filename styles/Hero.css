@@ -16,14 +16,15 @@
 }
 
 .hero-content{
+    width: 100%;
     position: relative;
     flex: 1 auto;
 }
 
 hr {
-    width: 20vw;
+    width: 18%;
     margin-right: 2em;
-    height: 3px;
+    height: 3.5px;
     background-color: white;
 }
 
@@ -38,7 +39,12 @@ a{
     transform: translateY(-50%);
 }
 
-.hero-title h1
+.hero .parent{
+    justify-content: center;
+    height: 40%;
+}
+
+.hero-title h1, .hp-title h1
 {
   font-family: 'Roboto', sans-serif;
   font-size: 6vw;
@@ -53,34 +59,69 @@ a{
 
 .hero-email
 {
+    width: 100%;
     position: absolute;
     left: 0;
-    bottom: 20%;
+    bottom: 70%;
     font-size: 18px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
+.social__links{
+    display: none;
+}
+
 
 
 @media screen and (max-width: 1440px) {
 
-    .hero-title h1
+    .hero-title h1, .hp-title h1
     {
+        margin-left: 100px;
         font-size: 5.5em;
     }
 }
 
 @media screen and (max-width: 776px) {
-    .hero .container{
+    .hero .container, .hero .parent{
         width: 75%;
+        align-items: center;
     }
 
-    .hero-title h1
+    .hero-title h1, .hp-title h1
     {
+        margin: 0 auto;
         font-size: 4.5em;
         line-height: 85%;
+    }
+
+    .hero-email
+    {
+        display: none;
+    }
+
+    .hero-content{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .social__links{
+        margin-top: 50px;
+        display: inline-block;
+    }
+        
+    .social__links a svg
+    {
+        width: 25px;
+        height: 25px;
+    }
+
+    .social__links a
+    {
+        padding: 10px;
+        text-decoration: none;
     }
 }
 
@@ -90,7 +131,17 @@ a{
         width: 90%;
     }
 
-    .hero-title h1
+    .hero-title h1, .hp-title h1
+    {
+        font-size: 4em;
+        line-height: 85%;
+    }
+
+}
+
+
+@media screen and (max-width: 360px) {
+    .hero-title h1, .hp-title h1
     {
         font-size: 4em;
         line-height: 85%;
