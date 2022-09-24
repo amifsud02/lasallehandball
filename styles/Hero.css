@@ -148,3 +148,18 @@ a{
     }
 
 }
+
+
+@media screen and (orientation: landscape){
+    .hero-title h1, .hp-title h1
+    {
+        font-size: 3.5em;
+        line-height: 85%;
+    }
+
+    .hero .parent{
+        margin: 20px auto;
+        margin-top: -10px;
+    }
+}
+    
