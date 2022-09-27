@@ -212,7 +212,6 @@ a {
 }
 
 .sponsor-logo{
-  height: 10em;
   filter: grayscale(100%);
   transition: 0.5s ease-in-out;
 
@@ -223,8 +222,7 @@ a {
   transition: 0.5s ease-in-out;
 }
 
-.slider {
-  
+.slider {  
   position: relative;
   width: 100%;
   display: grid;
@@ -244,6 +242,7 @@ a {
   left:0;
   top:0;
 }
+
 .slider::after{
   right:0;
   top:0;
@@ -253,11 +252,12 @@ a {
 /*  IMPORTANT CODE BELOW */
 
 .slide-track {
-  width: calc(200px * 20);
+  width: calc(200px * 16);
   display: flex;
   animation: scroll 30s infinite linear normal;
   justify-content: space-between;
   margin: 50px 0 25px;
+  align-items: center;
 }
 
 .slide-track:hover, .slide-track2:hover{
@@ -265,17 +265,18 @@ a {
 }
 
 .slide-track2 {
-  width: calc(200px * 15);
+  width: calc(250px * 12);
   display: flex;
   animation: scroll2 30s linear reverse infinite;
   justify-content: space-between;
+  align-items: center;
   margin: 25px 0 50px;
 }
 
 .slide {
-  width: auto;
-  height: 60px;
-
+  width: 200px;
+  height: fit-content;
+  margin: 10px 25px;
   display: grid;
   place-items: center;
   transition:0.5s;
@@ -288,7 +289,7 @@ a {
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(calc(-150px * 10));
+    transform: translateX(calc(-250px * 8));
   }
 }
 
@@ -297,22 +298,17 @@ a {
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(calc(-150px * 5));
+    transform: translateX(calc(-250px * 6));
   }
 }
 
 @media screen and (max-width: 768px) {
   .slide-track {
-    width: calc(100px * 20);
+    width: calc(250px * 16);
   }
 
   .slide-track2 {
-    width: calc(125px * 15);
-  }
-
-  .slide {
-    width: auto;
-    height: 60px;
+    width: calc(250px * 12);
   }
 
   @keyframes scroll {
@@ -320,7 +316,7 @@ a {
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(calc(-100px * 10));
+      transform: translateX(calc(-200px * 4));
     }
   }
 
@@ -329,7 +325,7 @@ a {
       transform: translateX(0px);
     }
     100% {
-      transform: translateX(calc(-100px * 5));
+      transform: translateX(calc(-200px * 15));
     }
   }
 }

@@ -2,6 +2,7 @@ import { GetStaticProps } from "next/types"
 import React, { useEffect, useRef } from "react"
 import { supabase } from "../utils/supabaseClient"
 
+import Image from 'next/image'
 
 
 import Nav from "../components/Nav/Nav";
@@ -13,6 +14,7 @@ import Matches from "../components/Matches/Matches";
 import Footer from "../components/Footer/Footer";
 import Layout from "../components/Layout/Layout";
 import MiniGallery from "../components/MiniGallery/MiniGallery";
+import { height } from "@mui/system";
 
 
 export type Teams = {
@@ -168,35 +170,103 @@ export default function Home(props: any)
          <section className="sponsor">
           <div className="slider">
             <div className="slide-track">
-            <img loading="lazy" className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              </div>
             </div>
           </div>
 
           <div className="slider">
             <div className="slide-track2">
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
-            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              </div>
+
+    
             </div>
           </div>
         </section>
