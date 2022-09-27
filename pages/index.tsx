@@ -78,6 +78,25 @@ export type Match = {
 
 export default function Home(props: any)
 {   
+  const shimmer = (w: number, h: number) => `
+    <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <linearGradient id="g">
+          <stop stop-color="#333" offset="20%" />
+          <stop stop-color="#222" offset="50%" />
+          <stop stop-color="#333" offset="70%" />
+        </linearGradient>
+      </defs>
+      <rect width="${w}" height="${h}" fill="#333" />
+      <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+      <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+    </svg>`
+
+  const toBase64 = (str: string) =>
+    typeof window === 'undefined'
+      ? Buffer.from(str).toString('base64')
+      : window.btoa(str)
+
   return(
     <Layout title="Home - La Salle HC"> 
       <main> 
@@ -171,55 +190,55 @@ export default function Home(props: any)
           <div className="slider">
             <div className="slide-track">
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'}  layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
-              </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
-              </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
-              </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
-              </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
               </div>
 
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
               </div>
 
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
               </div>
             </div>
           </div>
@@ -227,43 +246,43 @@ export default function Home(props: any)
           <div className="slider">
             <div className="slide-track2">
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
-              </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
-              </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
-              </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
               </div>
 
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
               </div>
 
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
               </div>
               <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              </div>
+
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              </div>
+              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
+                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
               </div>
 
     
