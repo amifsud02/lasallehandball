@@ -168,30 +168,35 @@ export default function Home(props: any)
          <section className="sponsor">
           <div className="slider">
             <div className="slide-track">
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
+            <img loading="lazy" className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"></img>
             </div>
           </div>
 
           <div className="slider">
             <div className="slide-track2">
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
-            <img className="sponsor-logo slide" src="https://www.gamblerspick.com/uploads/monthly_2019_07/rootz.png.e291d32332a0a0702833f8f65c9e61f0.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"></img>
+            <img className="sponsor-logo slide" src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"></img>
             </div>
           </div>
         </section>
@@ -210,7 +215,23 @@ export default function Home(props: any)
         <section className="s-gallery">
           <div className="parent">
             <h1 className="title">Gallery</h1>
-            <MiniGallery></MiniGallery>
+            {/* <MiniGallery></MiniGallery> */}
+            <div className="image-grid">
+              <div className="image-row">
+                <div className="image image-01"></div>  
+                <div className="image image-02"></div>  
+                <div className="image image-03"></div>  
+              </div> 
+              <div className="image-row">
+                <div className="image image-04"></div>  
+                <div className="image image-05"></div>  
+              </div>  
+              <div className="image-row">
+                <div className="image image-06"></div>  
+                <div className="image image-07"></div>  
+                <div className="image image-08"></div>  
+              </div>  
+            </div>  
           </div>
         </section>
       </main>

@@ -253,7 +253,7 @@ a {
 /*  IMPORTANT CODE BELOW */
 
 .slide-track {
-  width: calc(150px * 20);
+  width: calc(200px * 20);
   display: flex;
   animation: scroll 30s infinite linear normal;
   justify-content: space-between;
@@ -265,7 +265,7 @@ a {
 }
 
 .slide-track2 {
-  width: calc(150px * 15);
+  width: calc(200px * 15);
   display: flex;
   animation: scroll2 30s linear reverse infinite;
   justify-content: space-between;
@@ -273,8 +273,8 @@ a {
 }
 
 .slide {
-  width: 150px;
-  height: auto;
+  width: auto;
+  height: 60px;
 
   display: grid;
   place-items: center;
@@ -311,8 +311,8 @@ a {
   }
 
   .slide {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 60px;
   }
 
   @keyframes scroll {

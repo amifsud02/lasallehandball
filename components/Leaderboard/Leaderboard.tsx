@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function Leaderboard({props, cid}: {props: any, cid: string})
 {   
     var index: number = 0;
-
+    const css = {height: '100%', width: 'auto' };
     return(
         <div className="leaderboard">
             <table width="100%">
@@ -32,9 +32,10 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                                     <td className="lb-pos c-text">{index}</td>
                                     <td className="lb-team">
                                         <div className="team-info">
-                                            <div className="team-badge">
-                                                {leaderboard.teams.teamLogo != null ? (
-                                                    <Image src={leaderboard.teams.teamLogo} alt={leaderboard.teamName} width={60} height={60} />
+                                            <div className="team-badge" style={{position: 'relative', height: '100%'}}>
+                                                
+                                               {leaderboard.teams.teamLogo != null ? (
+                                                    <Image src={leaderboard.teams.teamLogo} alt={leaderboard.teamName} width={60} height={60}/>
                                                 ): ''}
                                             </div>
                                             {leaderboard.teams.teamName}   
