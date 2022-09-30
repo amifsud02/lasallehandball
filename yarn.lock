@@ -1023,6 +1023,11 @@
   "resolved" "https://registry.npmjs.org/clsx/-/clsx-1.2.1.tgz"
   "version" "1.2.1"
 
+"color-calendar@^1.0.7":
+  "integrity" "sha512-XPTAc07oBC4Qyo7LuofUy1IueXNyKh19cwJn35slY8M7IgQEcFcRjxgEslHckoWwTH/OVRXCa1GUZz7+RzvYjA=="
+  "resolved" "https://registry.npmjs.org/color-calendar/-/color-calendar-1.0.7.tgz"
+  "version" "1.0.7"
+
 "color-convert@^1.9.0":
   "integrity" "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg=="
   "resolved" "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz"

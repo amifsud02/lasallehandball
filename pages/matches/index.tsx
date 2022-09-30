@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import { Match } from "..";
+import EventCalendar from "../../components/EventCalendar/EventCalendar";
 import Footer from "../../components/Footer/Footer";
 import Matches from "../../components/Matches/Matches";
 import PageHeader from "../../components/PageHeader/PageHeader";
@@ -17,19 +18,49 @@ function MatchesPage(props: any){
 
                         <Tabs redirect="/matches" showall={false}>
                             
-                        <Tab title="National League">
-                            <Matches props={props.matches} cid="National League"></Matches>
-                        </Tab>
+                            <Tab title="National League">
+                                <Matches props={props.matches} cid="National League"></Matches>
+                            </Tab>
 
-                        <Tab title="MHA Cup">
-                            <Matches props={props.matches} cid="MHA Cup"></Matches>
-                        </Tab>
+                            <Tab title="Louis Borg Cup">
+                                <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
+                            </Tab>
 
-                        <Tab title="Friendlies">
-                            <Matches props={props.matches} cid="Friendlies"></Matches>
-                        </Tab>
+                            <Tab title="Friendlies">
+                                <Matches props={props.matches} cid="Friendlies"></Matches>
+                            </Tab>
                         </Tabs>
                 </div>
+
+                <div className="parent">
+                    <h1 className="title">Upcoming Matches</h1>
+
+                        <Tabs redirect="/matches" showall={false}>
+                            
+                            <Tab title="National League">
+                                <Matches props={props.matches} cid="National League"></Matches>
+                            </Tab>
+
+                            <Tab title="MHA Cup">
+                                <Matches props={props.matches} cid="MHA Cup"></Matches>
+                            </Tab>
+
+                            <Tab title="Friendlies">
+                                <Matches props={props.matches} cid="Friendlies"></Matches>
+                            </Tab>
+                        </Tabs>
+                </div>
+
+                <div className="parent">
+                    <tr className="calender">
+                        <EventCalendar/>
+                        <div className="events">
+
+                        </div>
+                    </tr>
+                </div>
+                       
+
             </section>
            <Footer/>
         </>

@@ -151,8 +151,8 @@ export default function Home(props: any)
                     <Matches props={props.matches} cid="National League"></Matches>
                   </Tab>
 
-                  <Tab title="MHA Cup">
-                    <Matches props={props.matches} cid="MHA Cup"></Matches>
+                  <Tab title="Louis Borg Cup">
+                    <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
                   </Tab>
 
                   <Tab title="Friendlies">
@@ -323,7 +323,7 @@ export default function Home(props: any)
 
 export const getStaticProps: GetStaticProps = async () => {
   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Full Time').order('date', { ascending: true })
+  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Finished').order('date', { ascending: true })
 
   console.log(leaderboards)
 
