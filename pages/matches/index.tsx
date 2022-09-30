@@ -52,12 +52,7 @@ function MatchesPage(props: any){
                 </div>
 
                 <div className="parent">
-                    <tr className="calender">
-                        <EventCalendar/>
-                        <div className="events">
-
-                        </div>
-                    </tr>
+                    <EventCalendar></EventCalendar>
                 </div>
                        
 
