@@ -19,15 +19,15 @@ function MatchesPage(props: any){
                         <Tabs redirect="/matches" showall={false}>
                             
                                 <Tab title="National League">
-                                    <Matches props={props.matches} cid="National League"></Matches>
+                                    <Matches props={props.matches} cid="National League" status="Finished"></Matches>
                                 </Tab>
 
                             <Tab title="Louis Borg Cup">
-                                <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
+                                <Matches props={props.matches} cid="Louis Borg Cup" status="Finished"></Matches>
                             </Tab>
 
                             <Tab title="Friendlies">
-                                <Matches props={props.matches} cid="Friendlies"></Matches>
+                                <Matches props={props.matches} cid="Friendlies" status="Finished"></Matches>
                             </Tab>
                         </Tabs>
                 </div>
@@ -38,21 +38,26 @@ function MatchesPage(props: any){
                         <Tabs redirect="/matches" showall={false}>
                             
                             <Tab title="National League">
-                                <Matches props={props.matches} cid="National League"></Matches>
+                                <Matches props={props.matches} cid="National League" status="Not Started"></Matches>
                             </Tab>
 
-                                <Tab title="MHA Cup">
-                                    <Matches props={props.matches} cid="MHA Cup"></Matches>
+                                <Tab title="Louis Borg Cup">
+                                    <Matches props={props.matches} cid="Louis Borg Cup" status="Not Started"></Matches>
                                 </Tab>
 
                             <Tab title="Friendlies">
-                                <Matches props={props.matches} cid="Friendlies"></Matches>
+                                <Matches props={props.matches} cid="Friendlies" status="Not Started"></Matches>
                             </Tab>
                         </Tabs>
                 </div>
 
                 <div className="parent">
-                    <EventCalendar></EventCalendar>
+                    <div className="calendar">
+                        <EventCalendar></EventCalendar>
+                        <div className="events__container">
+
+                        </div>
+                    </div>
                 </div>
                        
 

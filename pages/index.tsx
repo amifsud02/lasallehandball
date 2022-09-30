@@ -141,15 +141,15 @@ export default function Home(props: any)
 
                 <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
-                    <Matches props={props.matches} cid="National League"></Matches>
+                    <Matches props={props.matches} cid="National League" status="Finished"></Matches>
                   </Tab>
 
                   <Tab title="Louis Borg Cup">
-                    <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
+                    <Matches props={props.matches} cid="Louis Borg Cup" status="Finished"></Matches>
                   </Tab>
 
                   <Tab title="Friendlies">
-                    <Matches props={props.matches} cid="Friendlies"></Matches>
+                    <Matches props={props.matches} cid="Friendlies" status="Finished"></Matches>
                   </Tab>
                 </Tabs>
           </div>
