@@ -283,3 +283,25 @@ table
   }
 }
 
+/* CALENDER */
+
+.calender
+{
+  position: relative;
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.calender .events
+{
+  margin: 0 5px;
+  position: relative; 
+  float: right;
+  height: 325px;
+  width: 50%;
+  background-color: white;
+}

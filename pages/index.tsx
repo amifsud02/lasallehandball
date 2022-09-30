@@ -152,7 +152,7 @@ export default function Home(props: any)
                   </Tab>
 
                   <Tab title="Louis Borg Cup">
-                    <Matches props={props.matches} cid="MHA Cup"></Matches>
+                    <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
                   </Tab>
 
                   <Tab title="Friendlies">
@@ -186,110 +186,102 @@ export default function Home(props: any)
           </div>
         </section>
 
-         <section className="sponsor">
-          <div className="slider">
-            <div className="slide-track">
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'}  layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+       <section className="sponsor">
+          <div className="carousel__wrapper">
+            <div className="carousel2">
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z" alt="JTI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z" alt="AMC Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z" alt="JTI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z" alt="AMC Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z" alt="JTI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z" alt="AMC Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z" alt="UAWings Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Metalco.png?t=2022-09-27T20%3A11%3A27.354Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/JTI.png?t=2022-09-27T20%3A11%3A20.267Z" alt="JTI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/UAWings.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/AMC.png?t=2022-09-27T20%3A11%3A08.395Z" alt="AMC Logo" />
               </div>
             </div>
           </div>
 
-          <div className="slider">
-            <div className="slide-track2">
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+          <div className="carousel__wrapper">
+            <div className="carousel">
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z" alt="1Padel Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z" alt="MBI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png" alt="Rootz Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z" alt="1Padel Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z" alt="MBI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png" alt="Rootz Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z" alt="1Padel Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z" alt="MBI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png" alt="Rootz Logo" />
               </div>
-
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z" alt="1Padel Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/MBI?t=2022-09-27T20%3A09%3A33.395Z" alt="MBI Logo" />
               </div>
-              <div className="slide sponsor-logo" style={{position: 'relative', height:'60px'}}>
-                <Image blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}placeholder={"blur"} loading={'lazy'} layout={"fill"} objectFit={'contain'} src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/PADEL.png?t=2022-09-27T20%3A09%3A43.868Z"/>
+              <div className="carousel__slide">
+                <img loading='lazy' src="https://jcyieqmvxhldriyzfmdp.supabase.co/storage/v1/object/public/logos/sponsors/Rootz.png" alt="Rootz Logo" />
               </div>
-
-    
             </div>
           </div>
         </section>
-        
+
         <section className="promo-banner">
           <div className="pb-parent">
             <div className="pb-title">
@@ -331,7 +323,7 @@ export default function Home(props: any)
 
 export const getStaticProps: GetStaticProps = async () => {
   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Full Time').order('date', { ascending: true })
+  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Finished').order('date', { ascending: true })
 
   console.log(leaderboards)
 
