@@ -151,7 +151,7 @@ export default function Home(props: any)
                     <Matches props={props.matches} cid="National League"></Matches>
                   </Tab>
 
-                  <Tab title="MHA Cup">
+                  <Tab title="Louis Borg Cup">
                     <Matches props={props.matches} cid="MHA Cup"></Matches>
                   </Tab>
 

@@ -10,7 +10,7 @@ function FixturesPage(props: any)
 {
     return(
         <>
-           <PageHeader pageName="Fixtures"/>
+           <PageHeader pageName="Leaderboard"/>
            <section>     
             <div className="parent">
                 <h1 className="title">Standings</h1>
