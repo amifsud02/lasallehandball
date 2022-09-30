@@ -2,19 +2,12 @@ import { GetStaticProps } from "next/types"
 import React, { useEffect, useRef } from "react"
 import { supabase } from "../utils/supabaseClient"
 
-import Image from 'next/image'
-
-
 import Nav from "../components/Nav/Nav";
-import Head from "next/head";
 import Tabs from "../components/Tab/Tabs";
 import Tab from "../components/Tab/Tab";
 import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
-import Footer from "../components/Footer/Footer";
 import Layout from "../components/Layout/Layout";
-import MiniGallery from "../components/MiniGallery/MiniGallery";
-import { height } from "@mui/system";
 
 
 export type Teams = {
