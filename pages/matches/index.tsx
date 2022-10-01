@@ -18,9 +18,9 @@ function MatchesPage(props: any){
 
                         <Tabs redirect="/matches" showall={false}>
                             
-                                <Tab title="National League">
-                                    <Matches props={props.matches} cid="National League" status="Finished"></Matches>
-                                </Tab>
+                            <Tab title="National League">
+                                <Matches props={props.matches} cid="National League" status="Finished"></Matches>
+                            </Tab>
 
                             <Tab title="Louis Borg Cup">
                                 <Matches props={props.matches} cid="Louis Borg Cup" status="Finished"></Matches>
@@ -41,9 +41,9 @@ function MatchesPage(props: any){
                                 <Matches props={props.matches} cid="National League" status="Not Started"></Matches>
                             </Tab>
 
-                                <Tab title="Louis Borg Cup">
-                                    <Matches props={props.matches} cid="Louis Borg Cup" status="Not Started"></Matches>
-                                </Tab>
+                            <Tab title="Louis Borg Cup">
+                                <Matches props={props.matches} cid="Louis Borg Cup" status="Not Started"></Matches>
+                            </Tab>
 
                             <Tab title="Friendlies">
                                 <Matches props={props.matches} cid="Friendlies" status="Not Started"></Matches>

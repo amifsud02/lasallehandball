@@ -287,6 +287,7 @@ table
   }
 }
 
+
 /* CALENDER */
 
 .calendar
@@ -308,15 +309,17 @@ table
   float: right;
   min-width: 307px;
   height: 325px;
+  max-height: 325px;
   flex-grow: 1;
-  background-color: white;
 
 }
 
 .calendar .event__details{
-  background: #000d34;
+  background: var(--accent-color);
   color: white;
+  font-weight: 600;
   display: grid;
+  width: 90%;
   margin: 15px auto;
   height: 50px;
   place-items: center;
@@ -337,4 +340,26 @@ table
   width: 100%;
   display: grid;
   place-content: center;
+}
+
+
+@media screen and (max-width: 693px)
+{
+  .calendar
+  {
+    max-width: 325px;
+  }
+
+  .calendar .events__container
+  {
+    margin-top: 10px;
+    width: 325px;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .calendar .event__details{
+    width: 90%;
+    border-radius: 3px;
+  }
 }
