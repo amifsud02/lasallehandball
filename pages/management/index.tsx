@@ -14,7 +14,7 @@ function ManagementPage(){
                     >
                         <div className="team__text">
                             <div className="team__title">
-                                <h4>Furkan Giray</h4>
+                                <h4>Robert Cachia</h4>
                                 <span>President</span>
                             </div>
 
@@ -38,7 +38,7 @@ function ManagementPage(){
                     >
                         <div className="team__text">
                             <div className="team__title">
-                                <h4>Furkan Giray</h4>
+                                <h4>Raffa</h4>
                                 <span>President</span>
                             </div>
 
@@ -62,7 +62,7 @@ function ManagementPage(){
                     >
                         <div className="team__text">
                             <div className="team__title">
-                                <h4>Furkan Giray</h4>
+                                <h4>Daniel Tabone</h4>
                                 <span>President</span>
                             </div>
 
@@ -86,7 +86,7 @@ function ManagementPage(){
                     >
                         <div className="team__text">
                             <div className="team__title">
-                                <h4>Furkan Giray</h4>
+                                <h4>Media Team</h4>
                                 <span>President</span>
                             </div>
 

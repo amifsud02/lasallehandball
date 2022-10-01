@@ -9,7 +9,6 @@ import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Layout from "../components/Layout/Layout";
 
-
 export type Teams = {
   id: number;
   teamName: string;
@@ -63,6 +62,7 @@ export type Match = {
     status: string;
     date: string;
     time: string;
+    datetime: string;
     location: string;
     categoryName: string;
     competitions: Competitions;

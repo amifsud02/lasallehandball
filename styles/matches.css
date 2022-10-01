@@ -79,7 +79,7 @@
   background: white;
   align-items: center;
   width: 100%;
-  height: 120px;
+  min-height: 150px;
   border-bottom: 2px solid #F0F0F0;
   padding: 20px;
 }
@@ -89,14 +89,15 @@
 }
 
 .match-details {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home-team,
 .away-team {
   display: flex;
   align-items: center;
-  width: 25%;
 }
 
 .away-team
@@ -122,11 +123,15 @@
 }
 
 .match-type{
-  margin: 20px;
-  font-size: 12px;
+  font-size: 10px;
+  text-transform: uppercase;
   font-weight: 600;
   color: #999999;
   letter-spacing: 1px;
+}
+
+.match-score{
+  margin: 20px;
 }
 
 .match-score span{
@@ -134,13 +139,29 @@
   color: white;
   border-radius: 5px;
   padding: 7.5px 10px;
+ 
 }
 
 .match-status{
-  margin: 20px;
+  margin-top: 11px;
   font-size: 10px;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+
+.match-date, .match-location
+{
+  font-family: Montserrat, sans-serif;
+  font-size: 12px;
+}
+
+.match-location
+{
+  font-size: 10px;
+}
+
+.team__upcoming{
+  display: none;
 }
 
 th
@@ -210,7 +231,9 @@ table
   border-collapse: collapse; 
 }
 
-
+.d-none{
+  display: none;
+}
 
 @media screen and (max-width: 1440px )
 {
@@ -229,9 +252,9 @@ table
     justify-content: space-evenly;
   }
 
-  .team-badge
+  .team-badge span img
   {
-    height: 45px;
+    margin-bottom: 10px;
   }
   
   .lb-team .team-info .team-badge
@@ -259,6 +282,24 @@ table
   .home-team .team-badge, .away-team .team-badge{
     margin: 15px;
   }
+
+  .team__upcoming
+  {
+    display: flex;
+    align-items: center;
+  }
+
+  .match__upcoming
+  {
+    flex-direction: column;
+    min-height: 150px;
+  }
+  
+  .match__upcoming .team-name, .team__none
+  {
+    display: none;
+  }
+  
 }
 
 @media screen and (max-width: 700px)
@@ -362,4 +403,71 @@ table
     width: 90%;
     border-radius: 3px;
   }
+}
+
+
+.expired-notice {
+  text-align: center;
+  border-radius: 0.25rem;
+  margin: 0.5rem;
+}
+
+.expired-notice > span {
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+}
+
+.expired-notice > p {
+  font-size: .75rem;
+}
+
+.show-counter {
+  margin: 11px ;
+}
+
+.show-counter .countdown-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.show-counter .countdown {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #01296f;
+  color: white;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+
+  line-height: 1;
+
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 0.5rem;
+}
+
+.show-counter .countdown.danger {
+  color: white;
+}
+
+.show-counter .countdown > p {
+  margin: 0;
+}
+
+.show-counter .countdown > span {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }

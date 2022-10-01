@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next";
-import { Match } from "..";
+
 import EventCalendar from "../../components/EventCalendar/EventCalendar";
 import Footer from "../../components/Footer/Footer";
 import Matches from "../../components/Matches/Matches";

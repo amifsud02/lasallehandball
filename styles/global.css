@@ -380,7 +380,7 @@ a {
 }
 .team__text .team__title span{
   font-size:15px;
-  color: var(--accent-color);
+  color: white;
 }
 .team__text p{
   color:#e4e4e4;
