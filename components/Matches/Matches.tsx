@@ -18,7 +18,7 @@ export default function Matches({props, cid, status}: {props: any, cid: string, 
                     {   
                         counter += 1;
                         return(
-                            <li key={`${match.id.toString()}`} className={`match ${status === 'Not Started' ? 'match__upcoming' : ''}`} >
+                            <li key={`${match.id}`} className={`match ${status === 'Not Started' ? 'match__upcoming' : ''}`} >
                                 <div className={`home-team ${status === 'Not Started' ? 'team__none' : ''}`}>
                                     <div className="team-badge">
                                         <Image src={match.homeTeam.teamLogo} alt={match.homeTeam.teamName} width={60} height={60} />
@@ -91,7 +91,7 @@ export default function Matches({props, cid, status}: {props: any, cid: string, 
                         counter++;
 
                         return(
-                            <p key={randomUUID.toString()}className="error__match">No Matches Found</p>
+                            <p key="error-no-matches" className="error__match">No Matches Found</p>
                         )
                     }
                 }
