@@ -6,9 +6,14 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useState } from "react";
+
+import { createRef, SyntheticEvent, useRef, useState } from "react";
+
+import emailjs from '@emailjs/browser';
 
 function ContactPage(){
+   
+    // Accordian
     const [expanded, setExpanded] = useState<string | false>(false);
 
     const handleChange =
@@ -16,6 +21,21 @@ function ContactPage(){
         
         setExpanded(isExpanded ? panel : false);
     };
+
+    // Email Forms
+    const form = useRef<HTMLFormElement>(null);
+    console.log(form);
+
+    const sendEmail = (e: SyntheticEvent) => {
+        e.preventDefault();
+        
+        // emailjs.sendForm('service_2760p4b', 'template_tq74y72', form.current, '8erocrf7ad_EDbX1a')
+        //     .then((result: any) => {
+        //         console.log(result.text);
+        //     }, (error: any) => {
+        //         console.log(error.text)
+        //     });
+    }
 
     return(
         <>
@@ -77,38 +97,48 @@ function ContactPage(){
                             </AccordionDetails>
                         </Accordion>
                     </div>
+
                     <div style={{ margin: '50px 0'}}>
+                        
                         <div style={{ }}>Can&apos;t find the answer you&apos;re looking for? Then fill in the form below.</div>
-                        <form className="form-group">
+
+                        <form className="form-group" ref={form} onSubmit={sendEmail}>
                             <div className="form-input one c-small">
                                 <label>First Name</label>
-                                <input type="text" id="fname" name="fname" placeholder="Enter your first name"/>
+                                <input type="text" id="fname" name="first_name" placeholder="Enter your first name"/>
                             </div>
                             
                             <div className="form-input two c-small">
                                 <label>Last Name</label>
-                                <input type="text" id="fname" name="fname" placeholder="Enter your last name"/>
+                                <input type="text" id="fname" name="last_name" placeholder="Enter your last name"/>
                             </div>
                             
                             <div className="form-input three c-small">
                                 <label>Email</label>
-                                <input type="text" id="fname" name="fname" 
+                                <input type="text" id="fname" name="reply_to" 
                                     placeholder="Enter your email"/> 
                             </div>
                             
                             <div className="form-input four c-small">
                                 <label>Phone Number</label>
-                                <input type="text" id="fname" name="fname"
+                                <input type="text" id="fname" name="mobile_number"
                                     placeholder="Enter your phone number"/>
-                            </div>    
+                            </div>
+
                             <div className="form-input five c-wide">
                                 <label>Message</label>
                                 <textarea 
                                     id="fname" 
-                                    name="fname"
+                                    name="message"
                                     placeholder="Enter your message">
                                 </textarea>
                             </div>
+
+                            <div className="form-input six c-wide">
+                                <input type="submit" value="Send" />
+                            </div>
+
+
                         </form> 
 
                         <div>

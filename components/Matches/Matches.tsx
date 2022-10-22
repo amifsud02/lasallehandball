@@ -2,6 +2,7 @@ import { Match } from "../../pages"
 import Image from "next/image"
 import CountdownTimer from "../Countdown/CountdownTimer";
 import DateFormatter from "../Date/DateFormatter";
+import { randomUUID } from "crypto";
 
 export default function Matches({props, cid, status}: {props: any, cid: string, status: string}) {
 {       
@@ -15,11 +16,9 @@ export default function Matches({props, cid, status}: {props: any, cid: string, 
                 { 
                     if(match.status === status)
                     {   
-                        
                         counter += 1;
                         return(
-                            <li className={`match ${status === 'Not Started' ? 'match__upcoming' : ''}`} key={match.id.toString()}>
-                               
+                            <li key={`${match.id.toString()}`} className={`match ${status === 'Not Started' ? 'match__upcoming' : ''}`} >
                                 <div className={`home-team ${status === 'Not Started' ? 'team__none' : ''}`}>
                                     <div className="team-badge">
                                         <Image src={match.homeTeam.teamLogo} alt={match.homeTeam.teamName} width={60} height={60} />
@@ -92,7 +91,7 @@ export default function Matches({props, cid, status}: {props: any, cid: string, 
                         counter++;
 
                         return(
-                            <p className="error__match">No Matches Found</p>
+                            <p key={randomUUID.toString()}className="error__match">No Matches Found</p>
                         )
                     }
                 }
