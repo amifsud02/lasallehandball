@@ -1,6 +1,14 @@
 import { GetStaticProps } from "next/types"
+
+import { 
+  getAllCompetitions, 
+  getAllTeams,
+  getLatestFixtures,
+  getLatestResults 
+} from "../lib/runner";
+
 import React, { useEffect, useRef } from "react"
-import { supabase } from "../utils/supabaseClient"
+//import { supabase } from "../utils/supabaseClient"
 
 import Nav from "../components/Nav/Nav";
 import Tabs from "../components/Tab/Tabs";
@@ -18,8 +26,9 @@ export type Teams = {
 
 export type Competitions = {
   id: number;
-  competitionTypes: CompetitionTypes;
-  category: Category;
+  season: string;
+  competitionType: string;
+  category: string;
 }
 
 export type CompetitionTypes = {
@@ -52,7 +61,7 @@ export type Leaderboards = {
 }
 
 export type Match = {
-    id: number;
+    _id: string;
     competitionId: number;
     homeTeam: Teams;
     awayTeam: Teams;
@@ -65,32 +74,19 @@ export type Match = {
     time: string;
     location: string;
     categoryName: string;
-    competitions: Competitions;
+    competition: Competitions;
 }
+
+
+
+
 
 
 export default function Home(props: any)
 {   
-  const shimmer = (w: number, h: number) => `
-    <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <defs>
-        <linearGradient id="g">
-          <stop stop-color="#333" offset="20%" />
-          <stop stop-color="#222" offset="50%" />
-          <stop stop-color="#333" offset="70%" />
-        </linearGradient>
-      </defs>
-      <rect width="${w}" height="${h}" fill="#333" />
-      <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-      <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-    </svg>`
+  console.log(props);
 
-  const toBase64 = (str: string) =>
-    typeof window === 'undefined'
-      ? Buffer.from(str).toString('base64')
-      : window.btoa(str)
-
-  return(
+   return(
     <Layout title="Home - La Salle HC"> 
       <main> 
         <section className="hero">
@@ -141,21 +137,21 @@ export default function Home(props: any)
 
                 <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
-                    <Matches props={props.matches} cid="National League"></Matches>
+                    <Matches props={props.results} cid="National League"></Matches>
                   </Tab>
 
                   <Tab title="Louis Borg Cup">
-                    <Matches props={props.matches} cid="Louis Borg Cup"></Matches>
+                    <Matches props={props.results} cid="Louis Borg Cup"></Matches>
                   </Tab>
 
                   <Tab title="Friendlies">
-                    <Matches props={props.matches} cid="Friendlies"></Matches>
+                    <Matches props={props.results} cid="Friendlies"></Matches>
                   </Tab>
                 </Tabs>
           </div>
         </section>
 
-        <section>     
+        {/*<section>     
           <div className="parent">
               <h1 className="title">Standings</h1>
 
@@ -177,9 +173,9 @@ export default function Home(props: any)
                   </Tab>
               </Tabs>
           </div>
-        </section>
+        </section> */}
 
-       <section className="sponsor">
+       {/*<section className="sponsor">
           <div className="carousel__wrapper">
             <div className="carousel2">
               <div className="carousel__slide">
@@ -273,7 +269,7 @@ export default function Home(props: any)
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="promo-banner">
           <div className="pb-parent">
@@ -313,17 +309,37 @@ export default function Home(props: any)
   )
 }
      
-
 export const getStaticProps: GetStaticProps = async () => {
-  const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-  const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Finished').order('date', { ascending: true })
 
-  console.log(leaderboards)
+  const teams = await getAllTeams();
+  const competitions = await getAllCompetitions();
 
-  return{
+  const results = await getLatestResults();
+  const fixtures = await getLatestFixtures();
+
+  return {
     props: {
-      leaderboards,
-      matches
-    }
-  }
-}
+      teams, 
+      competitions,
+      results
+    },
+
+    revalidate: 10
+  };
+};
+
+
+
+// export const getStaticProps: GetStaticProps = async () => {
+//   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
+//   const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Finished').order('date', { ascending: true })
+
+//   console.log(leaderboards)
+
+//   return{
+//     props: {
+//       leaderboards,
+//       matches
+//     }
+//   }
+// }
