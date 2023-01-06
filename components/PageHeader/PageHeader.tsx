@@ -13,7 +13,7 @@ const PageHeader = ({pageName}: PageProps) => {
 
                 <meta charSet="UTF-8"></meta>
                 <meta httpEquiv="X-UA-Compatible" content="IE=edge"></meta>
-                <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui"></meta>
                 <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
 
                 <meta name="title" content={`La Salle Handball Club - ${pageName}`}></meta> 

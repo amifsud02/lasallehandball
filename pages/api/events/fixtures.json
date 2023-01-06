@@ -6,8 +6,8 @@
     "EndDate": "28/09/2022",
     "EndTime": "8:00:00 PM",
     "name": "Hamrun vs La Salle",
-    "start": "2022-28-09T18:00:00",
-    "end": "2022-28-09T20:00:00"
+    "start": "2022-09-28T18:00:00",
+    "end": "2022-09-28T20:00:00"
   },
   {
     "Subject": "Louis Borg Cup vs Kavallieri (Away)",
@@ -16,9 +16,20 @@
     "EndDate": "1/10/2022",
     "EndTime": "7:00:00 PM",
     "name": "Kavallieri vs La Salle",
-    "start": "2022-01-10T17:00:00",
-    "end": "2022-01-10T19:00:00"
+    "start": "2022-10-01T17:00:00",
+    "end": "2022-10-01T19:00:00"
   },
+  {
+    "Subject": "Louis Borg Cup vs Kavallieri (Away)",
+    "StartDate": "1/10/2022",
+    "StartTime": "5:00:00 PM",
+    "EndDate": "1/10/2022",
+    "EndTime": "7:00:00 PM",
+    "name": "Kavallieri vs La Salle",
+    "start": "2022-10-01T17:00:00",
+    "end": "2022-10-01T19:00:00"
+  },
+
   {
     "Subject": "Louis Borg Cup vs HMS (Home)",
     "StartDate": "23/10/2022",
@@ -26,8 +37,8 @@
     "EndDate": "23/10/2022",
     "EndTime": "11:00:00 AM",
     "name": "La Salle vs HMS",
-    "start": "2022-23-10T09:00:00",
-    "end": "2022-23-10T11:00:00"
+    "start": "2022-10-23T09:00:00",
+    "end": "2022-10-23T11:00:00"
   },
   {
     "Subject": "Louis Borg Cup Final (TBA)",
@@ -36,8 +47,8 @@
     "EndDate": "26/10/2022",
     "EndTime": "10:00:00 PM",
     "name": "Louis Borg Cup Final",
-    "start": "2022-26-10T20:00:00",
-    "end": "2022-26-10T22:00:00"
+    "start": "2022-10-26T20:00:00",
+    "end": "2022-10-26T22:00:00"
   },
   {
     "Subject": "La Salle vs HMS",
@@ -46,7 +57,7 @@
     "EndDate": "29/10/2022",
     "EndTime": "5:45:00 PM",
     "name": "La Salle vs HMS",
-    "start": "2022-29-10T15:45:00",
-    "end": "2022-29-10T17:45:00"
+    "start": "2022-10-29T15:45:00",
+    "end": "2022-10-29T17:45:00"
   }
 ]

@@ -17,7 +17,6 @@ import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Layout from "../components/Layout/Layout";
 
-
 export type Teams = {
   id: number;
   teamName: string;
@@ -72,6 +71,7 @@ export type Match = {
     status: string;
     date: string;
     time: string;
+    datetime: string;
     location: string;
     categoryName: string;
     competition: Competitions;
@@ -85,6 +85,24 @@ export type Match = {
 export default function Home(props: any)
 {   
   console.log(props);
+  // const shimmer = (w: number, h: number) => `
+  //   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  //     <defs>
+  //       <linearGradient id="g">
+  //         <stop stop-color="#333" offset="20%" />
+  //         <stop stop-color="#222" offset="50%" />
+  //         <stop stop-color="#333" offset="70%" />
+  //       </linearGradient>
+  //     </defs>
+  //     <rect width="${w}" height="${h}" fill="#333" />
+  //     <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  //     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+  //   </svg>`
+
+  // const toBase64 = (str: string) =>
+  //   typeof window === 'undefined'
+  //     ? Buffer.from(str).toString('base64')
+  //     : window.btoa(str)
 
    return(
     <Layout title="Home - La Salle HC"> 
@@ -137,15 +155,15 @@ export default function Home(props: any)
 
                 <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
-                    <Matches props={props.results} cid="National League"></Matches>
+                    <Matches props={props.results} cid="National League" status="Finished"></Matches>
                   </Tab>
 
                   <Tab title="Louis Borg Cup">
-                    <Matches props={props.results} cid="Louis Borg Cup"></Matches>
+                    <Matches props={props.results} cid="Louis Borg Cup" status="Finished"></Matches>
                   </Tab>
 
                   <Tab title="Friendlies">
-                    <Matches props={props.results} cid="Friendlies"></Matches>
+                    <Matches props={props.results} cid="Friendlies" status="Finished"></Matches>
                   </Tab>
                 </Tabs>
           </div>
