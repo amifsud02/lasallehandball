@@ -9,7 +9,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { createRef, SyntheticEvent, useRef, useState } from "react";
 
-import emailjs from '@emailjs/browser';
 
 function ContactPage(){
    

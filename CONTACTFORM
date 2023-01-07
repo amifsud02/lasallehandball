@@ -1,0 +1,99 @@
+Create a new component for the contact form. This component should render a form with input fields for the user to enter their name, email address, and message, as well as a submit button. You can use the useState hook to manage the form data in the component's state.
+
+Add an onSubmit event handler to the form that sends a POST request to a serverless function when the form is submitted. You can use the fetch function to make the request.
+
+Create a serverless function to handle the form submission and send the email. This function should process the form data and use the nodemailer library to send an email to your Gmail address.
+
+Add some styling to the form using CSS. You can use the styled-jsx library to style the component.
+
+
+import { useState } from 'react';
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  return (
+    <form>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
+      <label htmlFor="email">Email:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+      <label htmlFor="message">Message:</label>
+      <textarea
+        id="message"
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+export default ContactForm;
+
+Next, add an onSubmit event handler to the form that sends a POST request to a serverless function when the form is submitted. You can use the fetch function to make the request:
+
+import { useState } from 'react';
+
+function ContactForm() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
+      <label htmlFor="email">Email:</label>

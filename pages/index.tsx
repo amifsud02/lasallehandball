@@ -60,6 +60,7 @@ export type Leaderboards = {
 }
 
 export type Match = {
+    formattedDate: any;
     _id: string;
     competitionId: number;
     homeTeam: Teams;
@@ -69,6 +70,7 @@ export type Match = {
     homeScore: number;
     awayScore: number;
     status: string;
+    startDate: string;
     date: string;
     time: string;
     datetime: string;
@@ -333,13 +335,31 @@ export const getStaticProps: GetStaticProps = async () => {
   const competitions = await getAllCompetitions();
 
   const results = await getLatestResults();
+
+  const modifiedResults = results.map(result => {
+    const startDateString = result.startDate.toISOString();
+    const endDateString = result.endDate.toISOString();
+    const date = new Date(startDateString);
+    //const options = { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' };
+    var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
+    formattedDate =  formattedDate.replace(",", " /");
+
+    return{
+      ...result,
+      startDate: startDateString,
+      endDate: endDateString,
+      formattedDate: formattedDate
+    }
+
+  })
+
   const fixtures = await getLatestFixtures();
 
   return {
     props: {
       teams, 
       competitions,
-      results
+      results: modifiedResults
     },
 
     revalidate: 10

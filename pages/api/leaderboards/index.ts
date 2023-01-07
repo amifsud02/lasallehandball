@@ -2,7 +2,7 @@
 import { supabase } from "../../../utils/supabaseClient";
 import { NextApiRequest, NextApiResponse } from "../../../node_modules/next/dist/shared/lib/utils";
 
-export default async(req: NextApiRequest, res: NextApiResponse) => {
+const leaderboards = async(req: NextApiRequest, res: NextApiResponse) => {
 
     const id = req.query.id;
 
@@ -12,3 +12,5 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
 
     res.status(202).json(allTeams);
 }
+
+export default leaderboards;

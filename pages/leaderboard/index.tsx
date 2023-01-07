@@ -6,7 +6,7 @@ import Tab from "../../components/Tab/Tab";
 import Tabs from "../../components/Tab/Tabs";
 import Leaderboard from "../../components/Leaderboard/Leaderboard";
 
-function FixturesPage(props: any)
+function FixturesPage()
 {
     return(
         <>
@@ -15,7 +15,7 @@ function FixturesPage(props: any)
             <div className="parent">
                 <h1 className="title">Standings</h1>
 
-                <Tabs redirect="/team" showall={false}>
+                {/* <Tabs redirect="/team" showall={false}>
                     <Tab title="National League Men">
                         <Leaderboard props={props.leaderboards} cid={"Men"}/>
                     </Tab>
@@ -31,7 +31,7 @@ function FixturesPage(props: any)
                     <Tab title="U21 Women">
                         <Leaderboard props={props.leaderboards} cid={"U21 Women"}/>
                     </Tab>
-                </Tabs>
+                </Tabs> */}
             </div>
             </section>
 
@@ -44,16 +44,16 @@ function FixturesPage(props: any)
 export default FixturesPage;
 
 
-export const getStaticProps: GetStaticProps = async () => {
-    const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-    const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Full Time').order('date', { ascending: true })
+// export const getStaticProps: GetStaticProps = async () => {
+//     const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
+//     const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Full Time').order('date', { ascending: true })
   
-    console.log(leaderboards)
+//     console.log(leaderboards)
   
-    return{
-      props: {
-        leaderboards,
-        matches
-      }
-    }
-  }
+//     return{
+//       props: {
+//         leaderboards,
+//         matches
+//       }
+//     }
+//   }

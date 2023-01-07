@@ -31,5 +31,3 @@ if (process.env.NODE_ENV === 'development') {
 // Export a module-scoped MongoClient promise. By doing this in a
 // separate module, the client can be shared across functions.
 export default clientPromise;
-
-//MONGODB_URI=mongodb+srv://amifsud02:stkcOb5WgLMlsL97@cluster0.xzlir.mongodb.net/?retryWrites=true&w=majority

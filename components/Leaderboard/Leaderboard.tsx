@@ -21,7 +21,8 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                     </tr>
                 </thead>
                 <tbody>
-                   {props.map((leaderboard: Leaderboards) => 
+                    hi
+                   {/* {props.map((leaderboard: Leaderboards) => 
                     {   
                         if(leaderboard.competitions.category.categoryName == cid)
                         {
@@ -52,7 +53,7 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                             
                         }
                      }
-                   )}                 
+                   )}                  */}
                 </tbody>
             </table>
         </div>

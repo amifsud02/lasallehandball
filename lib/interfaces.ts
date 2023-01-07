@@ -42,7 +42,7 @@ export type Leaderboards = {
     competitions: Competitions;
   }
   
-  export type Matches = {
+  export type Matches = {      
       id: ObjectId;
       competitionId: number;
       homeTeam: Teams;
@@ -52,7 +52,8 @@ export type Leaderboards = {
       homeScore: number;
       awayScore: number;
       status: string;
-      date: string;
+      startDate: any;
+      endDate: any;
       time: string;
       location: string;
       categoryName: string;

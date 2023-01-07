@@ -133,7 +133,9 @@ export async function getLatestResults(): Promise<Matches[]> {
             homeScore: 1,
             awayScore: 1,
             status: 1,
-            location: 1
+            location: 1,
+            startDate: 1,
+            endDate: 1
           }
         }
       ]).toArray();
