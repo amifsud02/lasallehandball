@@ -6,7 +6,6 @@ import Matches from "../../components/Matches/Matches";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Tab from "../../components/Tab/Tab";
 import Tabs from "../../components/Tab/Tabs";
-import { supabase } from "../../utils/supabaseClient";
 
 function MatchesPage(props: any){
     return(
@@ -16,7 +15,7 @@ function MatchesPage(props: any){
                 <div className="parent">
                     <h1 className="title">Latest Results</h1>
 
-                        <Tabs redirect="/matches" showall={false}>
+                        {/* <Tabs redirect="/matches" showall={false}>
                             
                             <Tab title="National League">
                                 <Matches props={props.matches} cid="National League" status="Finished"></Matches>
@@ -29,13 +28,13 @@ function MatchesPage(props: any){
                             <Tab title="Friendlies">
                                 <Matches props={props.matches} cid="Friendlies" status="Finished"></Matches>
                             </Tab>
-                        </Tabs>
+                        </Tabs> */}
                 </div>
 
                 <div className="parent">
                     <h1 className="title">Upcoming Matches</h1>
 
-                        <Tabs redirect="/matches" showall={false}>
+                        {/* <Tabs redirect="/matches" showall={false}>
                             
                             <Tab title="National League">
                                 <Matches props={props.matches} cid="National League" status="Not Started"></Matches>
@@ -48,7 +47,7 @@ function MatchesPage(props: any){
                             <Tab title="Friendlies">
                                 <Matches props={props.matches} cid="Friendlies" status="Not Started"></Matches>
                             </Tab>
-                        </Tabs>
+                        </Tabs> */}
                 </div>
 
                 <div className="parent">
@@ -70,14 +69,14 @@ function MatchesPage(props: any){
 
 export default MatchesPage;
 
-export const getStaticProps: GetStaticProps = async () => {
+// export const getStaticProps: GetStaticProps = async () => {
     
-    const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('date', { ascending: true })
+//     const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('date', { ascending: true })
   
-    return{
-      props: {
-        matches
-      }
-    }
+//     return{
+//       props: {
+//         matches
+//       }
+//     }
 
-  }
+//   }

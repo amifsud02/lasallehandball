@@ -1,7 +1,6 @@
 import { GetStaticProps } from "next";
 import Footer from "../../components/Footer/Footer";
 import PageHeader from "../../components/PageHeader/PageHeader";
-import { supabase } from "../../utils/supabaseClient";
 import Tab from "../../components/Tab/Tab";
 import Tabs from "../../components/Tab/Tabs";
 import Leaderboard from "../../components/Leaderboard/Leaderboard";
