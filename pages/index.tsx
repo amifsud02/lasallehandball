@@ -3,6 +3,7 @@ import { GetStaticProps } from "next/types"
 import { 
   getAllCompetitions, 
   getAllTeams,
+  getCurrentWeekGames,
   getLatestFixtures,
   getLatestResults 
 } from "../lib/runner";
@@ -86,7 +87,7 @@ export type Match = {
 
 export default function Home(props: any)
 {   
-  console.log(props);
+  console.log(props.upcomingFixtures)
   // const shimmer = (w: number, h: number) => `
   //   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   //     <defs>
@@ -355,11 +356,16 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const fixtures = await getLatestFixtures();
 
+  const upcomingFixtures = await getCurrentWeekGames()
+
+  
+
   return {
     props: {
       teams, 
       competitions,
-      results: modifiedResults
+      results: modifiedResults,
+      upcomingFixtures
     },
 
     revalidate: 10

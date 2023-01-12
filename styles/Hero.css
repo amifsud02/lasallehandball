@@ -47,7 +47,7 @@ a{
 .hero-title h1, .hp-title h1
 {
   font-family: 'Roboto', sans-serif;
-  font-size: 6vw;
+  font-size: clamp(40px, 92px, 150px);
   font-weight: 900;
   color: white;
   text-transform: uppercase;
