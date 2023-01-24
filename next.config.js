@@ -5,7 +5,7 @@ const nextConfig = {
   swcMinify: true,
   images: {
     domains: ['i.postimg.cc', 'thumbs2.imgbox.com'],
-    formates: ['image/avif', 'image/webp', 'image/jpeg', 'image/png', 'image/svg'],
+    formats: ["image/avif"],
   },
   env: {
     MONGODB_URI: process.env.MONGODB_URI

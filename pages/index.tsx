@@ -87,7 +87,7 @@ export type Match = {
 
 export default function Home(props: any)
 {   
-  console.log(props.upcomingFixtures)
+  console.log(props.modifiedFixtures)
   // const shimmer = (w: number, h: number) => `
   //   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   //     <defs>
@@ -358,14 +358,22 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const upcomingFixtures = await getCurrentWeekGames()
 
-  
+  const modifiedFixtures = upcomingFixtures.map(fixture => {
+    const startDateString = fixture.startDate.toISOString();
+    console.log(startDateString)
+    return {
+      ...fixture,
+      startDate: startDateString
+    }
+  })
+
 
   return {
     props: {
       teams, 
       competitions,
       results: modifiedResults,
-      upcomingFixtures
+      modifiedFixtures
     },
 
     revalidate: 10

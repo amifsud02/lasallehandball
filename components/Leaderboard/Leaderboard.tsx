@@ -1,4 +1,4 @@
-import { Leaderboards } from '../../pages';
+import { Leaderboards } from '../../pages/client';
 import Image from 'next/image';
 
 export default function Leaderboard({props, cid}: {props: any, cid: string})

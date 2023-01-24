@@ -1,4 +1,4 @@
-import { Match } from "../../pages"
+import { Match } from "../../pages";
 import Image from "next/image"
 import "crypto"
 import CountdownTimer from "../Countdown/CountdownTimer";
