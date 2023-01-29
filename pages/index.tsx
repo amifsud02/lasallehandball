@@ -114,17 +114,6 @@ export default function Home(props: any)
               </a>
             </div>
           </div>
-          {/* <div className="hero-content">  
-            <div className="container">
-              <div className="animate__animated animate__backInLeft hero-title d-flex ">
-                <h1>La Salle<br/>Handball<br/>Club</h1>
-              </div> 
-            </div>
-            <div className="hero-email">
-              <hr></hr>
-              <a href="mailto:info@lasallehandball.com">info@lasallehandball.com</a>
-            </div>
-          </div> */}
         </section>
 
         <section>
@@ -325,8 +314,57 @@ export default function Home(props: any)
   )
 }
      
-export const getStaticProps: GetStaticProps = async () => {
+// export const getStaticProps: GetStaticProps = async () => {
 
+//   const results = await getLatestResults();
+
+//   const modifiedResults = results.map(result => {
+//     const startDateString = result.startDate.toISOString();
+//     const endDateString = result.endDate.toISOString();
+//     const date = new Date(startDateString);
+//     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
+//     formattedDate =  formattedDate.replace(",", " /");
+
+//     return{
+//       ...result,
+//       startDate: startDateString,
+//       endDate: endDateString,
+//       formattedDate: formattedDate
+//     }
+
+//   })
+
+//   const upcomingFixtures = await getCurrentWeekFixtures();
+
+//   const modifiedFixtures = upcomingFixtures.map(fixture => {
+//     const startDateString = fixture.startDate.toISOString();
+//     const date = new Date(startDateString);
+//     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
+//     formattedDate =  formattedDate.replace(",", " /");
+
+//     return {
+//       ...fixture,
+//       startDate: startDateString,
+//       formattedDate: formattedDate
+//     }
+//   })
+
+//   const leaderboard = await getLeaderboard();
+  
+//   console.log(leaderboard);
+
+//   return {
+//     props: {
+//       results: modifiedResults,
+//       fixtures: modifiedFixtures,
+//       leaderboards: leaderboard
+//     },
+
+//     revalidate: 10
+//   };
+// };
+
+export async function getServerSideProps(){
   const results = await getLatestResults();
 
   const modifiedResults = results.map(result => {
@@ -369,23 +407,6 @@ export const getStaticProps: GetStaticProps = async () => {
       results: modifiedResults,
       fixtures: modifiedFixtures,
       leaderboards: leaderboard
-    },
-
-    revalidate: 10
+    }
   };
-};
-
-
-// export const getStaticProps: GetStaticProps = async () => {
-//   const {data: leaderboards} = await supabase.from('leaderboards').select("*, teams!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").order('points', { ascending: false })
-//   const {data: matches} = await supabase.from('fixtures').select("*, homeTeam!inner(teamName, teamLogo), awayTeam!inner(teamName, teamLogo), competitions!inner(competitionTypes!inner(competitionName), category!inner(categoryName))").eq('status', 'Finished').order('date', { ascending: true })
-
-//   console.log(leaderboards)
-
-//   return{
-//     props: {
-//       leaderboards,
-//       matches
-//     }
-//   }
-// }
+}

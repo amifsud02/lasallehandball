@@ -5,6 +5,8 @@ import { useRouter } from "next/router";
 
 import { Cross as Hamburger } from 'hamburger-react'
 
+import Image from 'next/image'
+
 const linksString = JSON.stringify(data)
 const links = JSON.parse(linksString).links
 
@@ -68,7 +70,7 @@ const Nav: React.FC<{}> = () => {
         <div className="navbar-bg">
             <div className='navbar'>
                 <div className={`navbar-brand ${isOpen ? 'active' : ''}`}>
-                    <img alt="logo" src="https://www.viewresults.com.mt/content/sports_clubs/3.png" width={75}></img>
+                    <Image src={"https://i.postimg.cc/dQmDkZhK/LSHC.png"} width={75} height={75}></Image>
                 </div>
 
                 <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>

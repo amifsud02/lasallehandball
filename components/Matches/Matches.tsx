@@ -2,8 +2,6 @@ import { Match } from "../../pages";
 import Image from "next/image"
 import "crypto"
 import CountdownTimer from "../Countdown/CountdownTimer";
-import DateFormatter from "../Date/DateFormatter";
-import { randomUUID } from "crypto";
 
 export default function Matches({props, cid, status}: {props: Match[], cid: string, status?: string}) {
 {       

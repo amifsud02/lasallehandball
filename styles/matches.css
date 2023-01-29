@@ -362,15 +362,58 @@ table
 
 }
 
+.accordian{
+  width: 90%;
+  margin: 15px auto;
+}
+
+.accordian__title{
+  cursor: pointer;
+  position: relative;
+}
+
 .calendar .event__details{
   background: var(--accent-color);
   color: white;
   font-weight: 600;
   display: grid;
-  width: 90%;
+  width: 100%;
   margin: 15px auto;
-  height: 50px;
+  min-height: 50px;
+  height: 50px; 
   place-items: center;
+}
+
+.accordian__content {
+  
+  display: block;
+  background-color: white;   
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.accordian__content.open{
+  border: 0.5px dashed #01296f;
+  padding: 15px;
+  max-height: 200px;
+  
+}
+
+
+.chevron-arrow{
+  display: inline-block;
+  border-right: 4px solid white;
+  border-bottom: 4px solid white;
+  width: 10px; height: 10px;
+  transform: rotate(-45deg);
+  position: absolute;
+  right: 5%;
+  transition: transform 0.4s ease-in;
+}
+
+.chevron-arrow.open{
+  transform: rotate(45deg);
 }
 
 .calendar .no__events

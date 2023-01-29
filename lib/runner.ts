@@ -347,7 +347,6 @@ export async function getResults(): Promise<Matches[]> {
   ]).toArray();
 }
 
-
 /* LEADERBOARDS */
 export async function getLeaderboard(): Promise<LeaderboardType[]> {
   const client = await clientPromise;
