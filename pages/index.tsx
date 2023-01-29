@@ -1,11 +1,9 @@
 import { GetStaticProps } from "next/types"
 
 import { 
-  getAllCompetitions, 
-  getAllTeams,
-  getCurrentWeekGames,
-  getLatestFixtures,
-  getLatestResults 
+  getCurrentWeekFixtures,
+  getLatestResults, 
+  getLeaderboard
 } from "../lib/runner";
 
 import React, { useEffect, useRef } from "react"
@@ -80,32 +78,9 @@ export type Match = {
     competition: Competitions;
 }
 
-
-
-
-
-
 export default function Home(props: any)
 {   
-  console.log(props.modifiedFixtures)
-  // const shimmer = (w: number, h: number) => `
-  //   <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-  //     <defs>
-  //       <linearGradient id="g">
-  //         <stop stop-color="#333" offset="20%" />
-  //         <stop stop-color="#222" offset="50%" />
-  //         <stop stop-color="#333" offset="70%" />
-  //       </linearGradient>
-  //     </defs>
-  //     <rect width="${w}" height="${h}" fill="#333" />
-  //     <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
-  //     <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
-  //   </svg>`
-
-  // const toBase64 = (str: string) =>
-  //   typeof window === 'undefined'
-  //     ? Buffer.from(str).toString('base64')
-  //     : window.btoa(str)
+  console.log(props.leaderboards)
 
    return(
     <Layout title="Home - La Salle HC"> 
@@ -172,7 +147,27 @@ export default function Home(props: any)
           </div>
         </section>
 
-        {/*<section>     
+        <section>
+          <div className="parent">
+              <h1 className="title">Upcoming Matches</h1>
+
+                <Tabs redirect="/matches" showall={true}>
+                  <Tab title="National League">
+                    <Matches props={props.fixtures} cid="National League" status="Not Started"></Matches>
+                  </Tab>
+
+                  <Tab title="Louis Borg Cup">
+                    <Matches props={props.fixtures} cid="Louis Borg Cup" status="Not Started"></Matches>
+                  </Tab>
+
+                  <Tab title="Friendlies">
+                    <Matches props={props.fixtures} cid="Friendlies" status="Not Started"></Matches>
+                  </Tab>
+                </Tabs>
+          </div>
+        </section>
+
+        <section>     
           <div className="parent">
               <h1 className="title">Standings</h1>
 
@@ -194,7 +189,7 @@ export default function Home(props: any)
                   </Tab>
               </Tabs>
           </div>
-        </section> */}
+        </section>
 
        {/*<section className="sponsor">
           <div className="carousel__wrapper">
@@ -332,16 +327,12 @@ export default function Home(props: any)
      
 export const getStaticProps: GetStaticProps = async () => {
 
-  const teams = await getAllTeams();
-  const competitions = await getAllCompetitions();
-
   const results = await getLatestResults();
 
   const modifiedResults = results.map(result => {
     const startDateString = result.startDate.toISOString();
     const endDateString = result.endDate.toISOString();
     const date = new Date(startDateString);
-    //const options = { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' };
     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
     formattedDate =  formattedDate.replace(",", " /");
 
@@ -354,32 +345,35 @@ export const getStaticProps: GetStaticProps = async () => {
 
   })
 
-  const fixtures = await getLatestFixtures();
-
-  const upcomingFixtures = await getCurrentWeekGames()
+  const upcomingFixtures = await getCurrentWeekFixtures();
 
   const modifiedFixtures = upcomingFixtures.map(fixture => {
     const startDateString = fixture.startDate.toISOString();
-    console.log(startDateString)
+    const date = new Date(startDateString);
+    var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
+    formattedDate =  formattedDate.replace(",", " /");
+
     return {
       ...fixture,
-      startDate: startDateString
+      startDate: startDateString,
+      formattedDate: formattedDate
     }
   })
 
+  const leaderboard = await getLeaderboard();
+  
+  console.log(leaderboard);
 
   return {
     props: {
-      teams, 
-      competitions,
       results: modifiedResults,
-      modifiedFixtures
+      fixtures: modifiedFixtures,
+      leaderboards: leaderboard
     },
 
     revalidate: 10
   };
 };
-
 
 
 // export const getStaticProps: GetStaticProps = async () => {

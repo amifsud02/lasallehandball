@@ -1,3 +1,6 @@
+*{
+  /* background-color: rgba(0, 255, 204, 0.25); */
+}
 .parent {
   display: flex;
   flex-direction: column;
@@ -73,104 +76,86 @@
     transform-origin: bottom left;
 }
 
+
+
+/* MATCH */
+
 .match {
-  /* display: flex;
-  justify-content: space-between;
-  background: white;
-  align-items: center;
-  width: 100%;
-  min-height: 150px;
-  border-bottom: 2px solid #F0F0F0;
-  padding: 20px; */
-
-  display: grid;
-  background: white;
-  width: 100%;
-  grid-template-columns: repeat(1,2fr 4fr 2fr);
-  grid-column-gap: 40px;
-  padding: 20px;
-  min-height: 150px;
-  align-items: center;
-  border-bottom: 2px solid #F0F0F0;
-  transition: all .5s ease 0s;
-}
-
-.match:last-child{
-  border-bottom: none;
-}
-
-.match-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  white-space: nowrap
-}
-
-.home-team,
-.away-team {
   display: flex;
   align-items: center;
-}
-
-.away-team
-{
-  justify-content: end;
-}
-
-.team-badge {
-  margin: 30px;
-}
-
-.lb-team .team-info .team-badge
-{
-  margin: 0;
-  margin-right: 30px;
-}
-
-.team-name {
-  font-weight: 700;
-  padding: -10px;
-  text-transform: uppercase;
-  font-size: 12px;
-}
-
-.match-type{
-  font-size: 10px;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: #999999;
-  letter-spacing: 1px;
-}
-
-.match-score{
-  margin: 20px;
-}
-
-.match-score span{
-  background: #01296f;
-  color: white;
-  border-radius: 5px;
-  padding: 7.5px 10px;
+  position: relative; 
+  width: 100%;
+  padding: 20px 50px;
+  min-height: 150px;
+  border-bottom: 2px solid #F0F0F0;
+ }
  
-}
-
-.match-status{
-  margin-top: 11px;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.match-date, .match-location
-{
-  font-family: Montserrat, sans-serif;
-  font-size: 12px;
-}
-
-.match-location
-{
-  font-size: 10px;
-}
+ .match:last-child{
+   border-bottom: none;
+ }
+ 
+ .home-team, .away-team {
+   display: flex;
+   align-items: center;
+   flex: 1 1;
+ }
+ 
+ .home-team{
+   justify-self: start;
+ }
+ 
+ .away-team {
+   justify-content: flex-end;
+ }
+ 
+ 
+ .match-details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .team-badge{
+   margin: 0 20px;
+   min-width: 50px;
+ }
+ 
+ .team-name {
+   font-size: .75em;
+   font-weight: 600;
+   margin: 5px 0;
+ }
+ 
+ .match-type{
+   font-size: .75em;
+   font-weight: 600;
+   margin: 5px 0;
+ }
+ 
+ .match-score {
+   font-size: .9em;
+   font-weight: 600;
+   margin: 20px;
+ }
+ 
+ .match-score span{
+   background: #01296f;
+   color: white;
+   border-radius: 5px;
+   padding: 7.5px 10px;
+  
+ }
+ 
+ .match-status {
+   font-size: .75em;
+   font-weight: 600;
+ }
+ 
+ .match-date {
+   font-size: .75em;
+   font-weight: 600;
+ }
 
 .team__upcoming{
   display: none;
@@ -254,14 +239,24 @@ table
   }
 }
 
+@media screen and (max-width: 1024px)
+{
+  .team-name{
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .match {
+    padding: 20px 0;
+  }
+}
+
 @media screen and (max-width: 772px)
 {
   .parent {
     width: 90%;
-  }
-
-  .match{
-    justify-content: space-evenly;
   }
 
   .team-badge span img
@@ -483,3 +478,9 @@ table
   font-size: 0.75rem;
   line-height: 1rem;
 }
+
+
+
+
+
+

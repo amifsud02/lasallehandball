@@ -1,9 +1,11 @@
 import { ObjectId } from "mongodb";
 
+
 export type Teams = {
     id: ObjectId;
     teamName: string;
-}
+    teamLogo: string;
+  }
 
 export type Competitions = {
     id: ObjectId;
@@ -23,12 +25,11 @@ export type Category = {
 
 
 
-export type Leaderboards = {
+export type LeaderboardType = {
     id: ObjectId;
-    competitionId: number;
+    competitionId: ObjectId;
     competitionName: string;
     categoryName: string;
-    teamId: number;
     teamName: string;
     played: number;
     wins: number;
@@ -38,8 +39,8 @@ export type Leaderboards = {
     goalsFor: number;
     goalsAgainst: number;
     goalDifference: number;
-    teams: Teams;
-    competitions: Competitions;
+    team: Teams;
+    competition: Competitions;
   }
   
   export type Matches = {      

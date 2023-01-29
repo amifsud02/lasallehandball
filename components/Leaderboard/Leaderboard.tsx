@@ -1,5 +1,5 @@
-import { Leaderboards } from '../../pages/client';
 import Image from 'next/image';
+import { LeaderboardType } from "../../lib/interfaces"
 
 export default function Leaderboard({props, cid}: {props: any, cid: string})
 {   
@@ -21,25 +21,24 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                     </tr>
                 </thead>
                 <tbody>
-                    hi
-                   {/* {props.map((leaderboard: Leaderboards) => 
-                    {   
-                        if(leaderboard.competitions.category.categoryName == cid)
-                        {
+                    
+                   {props.map((leaderboard: LeaderboardType) => {   
+                        // if(leaderboard.competition.category.categoryName == cid)
+                        // {
                             index = index + 1;
 
                             return(
-                                <tr className="lb-row" key={leaderboard.id}>
+                                <tr className="lb-row">
                                     <td className="lb-pos c-text">{index}</td>
                                     <td className="lb-team">
                                         <div className="team-info">
                                             <div className="team-badge" style={{position: 'relative', height: '100%'}}>
                                                 
-                                               {leaderboard.teams.teamLogo != null ? (
-                                                    <Image src={leaderboard.teams.teamLogo} alt={leaderboard.teamName} width={60} height={60}/>
-                                                ): ''}
+                                               
+                                               <Image src={leaderboard.team.teamLogo} alt={leaderboard.teamName} width={60} height={60}/>
+                                               
                                             </div>
-                                            {leaderboard.teams.teamName}   
+                                            {leaderboard.team.teamName}   
                                         </div>
                                     </td>
                                     <td className="c-text">{leaderboard.played}</td>
@@ -52,8 +51,8 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                             )
                             
                         }
-                     }
-                   )}                  */}
+                    //  }
+                   )}                 
                 </tbody>
             </table>
         </div>

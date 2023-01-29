@@ -1,6 +1,6 @@
 import clientPromise from "./mongodbClient";
 
-import { Teams, Competitions, Matches } from "./interfaces";
+import { Teams, Competitions, Matches, LeaderboardType } from "./interfaces";
 
 export async function getAllTeams(): Promise<Teams[]> {
     const client = await clientPromise;
@@ -61,17 +61,21 @@ export async function getLatestFixtures(): Promise<Matches[]> {
 
 export async function getLatestResults(): Promise<Matches[]> {
     const client = await clientPromise;
-
     const collection = client.db('lshc_backend').collection('fixtures');
+    const today = new Date();
 
     return await collection.aggregate([
         {
           $match: {
+            startDate: {
+              $gte: new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() - 7),
+              $lte: new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 7)
+            },
             status: {
-              $eq: "Not Started"
+              $eq: "Finished"
             }
           }
-        },
+        },  
         {
           $lookup: {
             from: "teams",
@@ -151,7 +155,7 @@ export async function getLatestResults(): Promise<Matches[]> {
       ]).toArray();
 }
 
-export async function getCurrentWeekGames(): Promise<Matches[]> {
+export async function getCurrentWeekFixtures(): Promise<Matches[]> {
 
   const client = await clientPromise;
 
@@ -164,15 +168,6 @@ export async function getCurrentWeekGames(): Promise<Matches[]> {
   return await collection.aggregate([
     {
       $match: {
-        // startDate: {
-        //   $gte: new Date(today.getFullYear(), 0, (weekNumber + 1) * 7),
-        //   $lt: new Date(today.getFullYear(), 0, (weekNumber * 7))
-        // },
-        // startDate: {
-        //   $gte: new Date(today.getFullYear(), today.getMonth(), (weekNumber + 1) * 7),
-        //   $lte: new Date(today.getFullYear(), today.getMonth(), (weekNumber + 2) * 7)
-        // },
-
         startDate: {
           $gte: new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() - 7),
           $lte: new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 7)
@@ -247,8 +242,6 @@ export async function getCurrentWeekGames(): Promise<Matches[]> {
             teamName: "$away_name.teamName",
             teamLogo: "$away_name.teamLogo"
         },
-        homeScore: 1,
-        awayScore: 1,
         status: 1,
         location: 1,
         startDate: 1
@@ -355,6 +348,61 @@ export async function getResults(): Promise<Matches[]> {
 }
 
 
+/* LEADERBOARDS */
+export async function getLeaderboard(): Promise<LeaderboardType[]> {
+  const client = await clientPromise;
+  const collection = client.db('lshc_backend').collection('leaderboards')
+
+  return await collection.aggregate([
+    {
+      $lookup: {
+        from: "teams",
+        localField: "team",
+        foreignField: "_id",
+        as: "team"
+      }
+    },
+    {
+      $unwind: "$team"
+    },
+    {
+      $lookup: {
+        from: "competitions",
+        localField: "competition",
+        foreignField: "_id",
+        as: "competition"
+      }
+    },
+    {
+      $unwind: "$competition"
+    },
+    {
+      $project: {
+        _id: 0,
+        team: {
+          teamName: "$team.teamName",
+          teamLogo: "$team.teamLogo"
+        },
+        played: 1,
+        wins: 1,
+        draws: 1,
+        losses: 1,
+        goalsFor: 1,
+        goalsAgainst: 1,
+        goalDifference: 1,
+        points: 1,
+        competition: {
+          season: "$competition.season",
+        }
+      }
+    }
+
+  ]).toArray();
+
+}
+
+
+
 function getWeekNumber(d: Date): number {
   // Copy date so don't modify original
   d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -368,3 +416,4 @@ function getWeekNumber(d: Date): number {
   // Return array of year and week number
   return weekNo;
 }
+

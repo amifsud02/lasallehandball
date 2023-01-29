@@ -34,7 +34,7 @@ const Footer = () => {
                     © 2022 - La Salle Handball Club
                 </div>
                 <div className="sf-content">
-                    Designed and Developed by <span>CGOWT</span>
+                    Designed and Developed by <span><a href="https://cgowt.com">CGOWT</a></span>
                 </div>
             </div>
         </footer>
