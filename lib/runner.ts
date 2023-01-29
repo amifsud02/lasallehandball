@@ -377,6 +377,17 @@ export async function getLeaderboard(): Promise<LeaderboardType[]> {
       $unwind: "$competition"
     },
     {
+      $lookup: {
+        from: "categories",
+        localField: "competition.category",
+        foreignField: "_id",
+        as: "category"
+      }
+    },
+    {
+      $unwind: "$category"
+    },
+    {
       $project: {
         _id: 0,
         team: {
@@ -393,6 +404,9 @@ export async function getLeaderboard(): Promise<LeaderboardType[]> {
         points: 1,
         competition: {
           season: "$competition.season",
+          category: {
+            categoryName: "$category.categoryName"
+          }
         }
       }
     }

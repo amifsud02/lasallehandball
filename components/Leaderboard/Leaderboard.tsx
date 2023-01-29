@@ -23,12 +23,12 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                 <tbody>
                     
                    {props.map((leaderboard: LeaderboardType) => {   
-                        // if(leaderboard.competition.category.categoryName == cid)
-                        // {
+                        if(leaderboard.competition.category.categoryName == cid)
+                        {
                             index = index + 1;
 
                             return(
-                                <tr className="lb-row">
+                                <tr className="lb-row" key={(index+1)*10}>
                                     <td className="lb-pos c-text">{index}</td>
                                     <td className="lb-team">
                                         <div className="team-info">
@@ -51,7 +51,7 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                             )
                             
                         }
-                    //  }
+                     }
                    )}                 
                 </tbody>
             </table>
