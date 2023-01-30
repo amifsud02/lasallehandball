@@ -131,7 +131,7 @@ export async function getLatestResults(): Promise<MatchType[]> {
             competition: {
               season: "$competition_info.season",
               category: "$category_name.categoryName",
-              competitionType: "$competition_type_name.competitionName"
+              competitionTypes: "$competition_type_name.competitionName"
             },
             homeTeam: {
                 teamName: "$home_name.teamName",
@@ -232,7 +232,7 @@ export async function getCurrentWeekFixtures(): Promise<MatchType[]> {
         competition: {
           season: "$competition_info.season",
           category: "$category_name.categoryName",
-          competitionType: "$competition_type_name.competitionName"
+          competitionTypes: "$competition_type_name.competitionName"
         },
         homeTeam: {
             teamName: "$home_name.teamName",
@@ -323,7 +323,7 @@ export async function getResults(): Promise<MatchType[]> {
         competition: {
           season: "$competition_info.season",
           category: "$category_name.categoryName",
-          competitionType: "$competition_type_name.competitionName"
+          competitionTypes: "$competition_type_name.competitionName"
         },
         homeTeam: {
             teamName: "$home_name.teamName",
