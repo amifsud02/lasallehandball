@@ -14,6 +14,7 @@ import '../styles/MiniGallery.css'
 import '../styles/contact.css'
 import '../styles/igrid.css'
 
+
 function MyApp({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }

@@ -23,7 +23,7 @@ export default function Leaderboard({props, cid}: {props: any, cid: string})
                 <tbody>
                     
                    {props.map((leaderboard: LeaderboardType) => {   
-                        if(leaderboard.competition.category.categoryName == cid)
+                        if(leaderboard.competition.category == cid)
                         {
                             index = index + 1;
 

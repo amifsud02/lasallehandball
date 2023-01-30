@@ -9,8 +9,9 @@ export type Teams = {
 
 export type Competitions = {
     id: ObjectId;
-    competitionTypes: CompetitionTypes;
-    category: Category;
+    season: string;
+    competitionType: string;
+    category: string;
 }
 
 export type CompetitionTypes = {
@@ -43,20 +44,24 @@ export type LeaderboardType = {
     competition: Competitions;
   }
   
-  export type Matches = {      
-      id: ObjectId;
-      competitionId: number;
-      homeTeam: Teams;
-      awayTeam: Teams;
-      homeTeamName: string;
-      awayTeamName: string;
-      homeScore: number;
-      awayScore: number;
-      status: string;
-      startDate: any;
-      endDate: any;
-      time: string;
-      location: string;
-      categoryName: string;
-      competitions: Competitions;
-  }
+  export type MatchType = {   
+    id: ObjectId   
+    formattedDate: any;
+    _id: string;
+    competitionId: number;
+    homeTeam: Teams;
+    awayTeam: Teams;
+    homeTeamName: string;
+    awayTeamName: string;
+    homeScore: number;
+    awayScore: number;
+    status: string;
+    startDate: string;
+    endDate: string;
+    date: string;
+    time: string;
+    datetime: string;
+    location: string;
+    categoryName: string;
+    competition: Competitions;
+}

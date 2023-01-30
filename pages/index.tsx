@@ -6,7 +6,7 @@ import {
   getLeaderboard
 } from "../lib/runner";
 
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef, useState } from "react"
 //import { supabase } from "../utils/supabaseClient"
 
 import Nav from "../components/Nav/Nav";
@@ -15,6 +15,7 @@ import Tab from "../components/Tab/Tab";
 import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Layout from "../components/Layout/Layout";
+import { MatchType } from "../lib/interfaces";
 
 export type Teams = {
   id: number;
@@ -80,9 +81,15 @@ export type Match = {
 
 export default function Home(props: any)
 {   
-  console.log(props.leaderboards)
+  const [isLoading, setLoading] = useState(true);
 
-   return(
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  }, [])
+  
+  return(
     <Layout title="Home - La Salle HC"> 
       <main> 
         <section className="hero">
@@ -119,7 +126,7 @@ export default function Home(props: any)
         <section>
           <div className="parent">
               <h1 className="title">Latest Matches</h1>
-
+                
                 <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
                     <Matches props={props.results} cid="National League" status="Finished"></Matches>
@@ -133,24 +140,30 @@ export default function Home(props: any)
                     <Matches props={props.results} cid="Friendlies" status="Finished"></Matches>
                   </Tab>
                 </Tabs>
+                
           </div>
         </section>
 
         <section>
           <div className="parent">
               <h1 className="title">Upcoming Matches</h1>
-
                 <Tabs redirect="/matches" showall={true}>
                   <Tab title="National League">
-                    <Matches props={props.fixtures} cid="National League" status="Not Started"></Matches>
+                    {isLoading ? <h5>Loading...</h5> :
+                      <Matches props={props.fixtures} cid="National League" status="Not Started"></Matches>
+                    }
                   </Tab>
 
                   <Tab title="Louis Borg Cup">
-                    <Matches props={props.fixtures} cid="Louis Borg Cup" status="Not Started"></Matches>
+                    {isLoading ? <h5>Loading...</h5> :
+                      <Matches props={props.fixtures} cid="Louis Borg Cup" status="Not Started"></Matches>
+                    }
                   </Tab>
 
                   <Tab title="Friendlies">
-                    <Matches props={props.fixtures} cid="Friendlies" status="Not Started"></Matches>
+                    {isLoading ? <h5>Loading...</h5> :
+                      <Matches props={props.fixtures} cid="Friendlies" status="Not Started"></Matches>
+                    }
                   </Tab>
                 </Tabs>
           </div>
@@ -313,63 +326,13 @@ export default function Home(props: any)
     </Layout>
   )
 }
-     
-// export const getStaticProps: GetStaticProps = async () => {
 
-//   const results = await getLatestResults();
-
-//   const modifiedResults = results.map(result => {
-//     const startDateString = result.startDate.toISOString();
-//     const endDateString = result.endDate.toISOString();
-//     const date = new Date(startDateString);
-//     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
-//     formattedDate =  formattedDate.replace(",", " /");
-
-//     return{
-//       ...result,
-//       startDate: startDateString,
-//       endDate: endDateString,
-//       formattedDate: formattedDate
-//     }
-
-//   })
-
-//   const upcomingFixtures = await getCurrentWeekFixtures();
-
-//   const modifiedFixtures = upcomingFixtures.map(fixture => {
-//     const startDateString = fixture.startDate.toISOString();
-//     const date = new Date(startDateString);
-//     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
-//     formattedDate =  formattedDate.replace(",", " /");
-
-//     return {
-//       ...fixture,
-//       startDate: startDateString,
-//       formattedDate: formattedDate
-//     }
-//   })
-
-//   const leaderboard = await getLeaderboard();
-  
-//   console.log(leaderboard);
-
-//   return {
-//     props: {
-//       results: modifiedResults,
-//       fixtures: modifiedFixtures,
-//       leaderboards: leaderboard
-//     },
-
-//     revalidate: 10
-//   };
-// };
-
-export async function getServerSideProps(){
+export async function getStaticProps(){
   const results = await getLatestResults();
 
-  const modifiedResults = results.map(result => {
-    const startDateString = result.startDate.toISOString();
-    const endDateString = result.endDate.toISOString();
+  const modifiedResults = results.map((result: MatchType) => {
+    const startDateString = result.startDate.toString();
+    const endDateString = result.endDate.toString();
     const date = new Date(startDateString);
     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
     formattedDate =  formattedDate.replace(",", " /");
@@ -386,7 +349,7 @@ export async function getServerSideProps(){
   const upcomingFixtures = await getCurrentWeekFixtures();
 
   const modifiedFixtures = upcomingFixtures.map(fixture => {
-    const startDateString = fixture.startDate.toISOString();
+    const startDateString = fixture.startDate.toString();
     const date = new Date(startDateString);
     var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
     formattedDate =  formattedDate.replace(",", " /");
@@ -400,8 +363,6 @@ export async function getServerSideProps(){
 
   const leaderboard = await getLeaderboard();
   
-  console.log(leaderboard);
-
   return {
     props: {
       results: modifiedResults,

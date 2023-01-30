@@ -1,17 +1,29 @@
-import { Match } from "../../pages";
+
 import Image from "next/image"
 import "crypto"
 import CountdownTimer from "../Countdown/CountdownTimer";
+import { MatchType } from "../../lib/interfaces";
 
-export default function Matches({props, cid, status}: {props: Match[], cid: string, status?: string}) {
+export default function Matches({props, cid, status}: {props: MatchType[], cid: string, status?: string}) {
 {       
     let counter = 0;
+    const allMatches = props.filter(
+        (match: MatchType) =>
+          match.competition.competitionType == cid && match.status == status
+      );
 
-    return(
-        <>
-            {props.map((match: Match) => {
-                if(match.competition.competitionType == cid)
-                {
+    if(allMatches.length === 0) {
+        return(
+            <p key="error-no-matches" className="error__match">No Matches Found</p>
+        )
+    }
+    else
+    {
+        return(
+            <>
+            
+                {allMatches.map((match: MatchType) => {   
+                        
                     return(
                         <li className="match" key={Math.random()}>
                             <div className="home-team">
@@ -65,20 +77,10 @@ export default function Matches({props, cid, status}: {props: Match[], cid: stri
                             </div>
                         </li>
                     )
-                }
-                else
-                {
-                    if(counter == 0)
-                    {
-                        counter++;
-
-                        return(
-                            <p key="error-no-matches" className="error__match">No Matches Found</p>
-                        )
-                    }
-                }
-            })}
-        
-        </>
-    )}
+                    
+                })}
+            
+            </>
+        )}
+    }
 }

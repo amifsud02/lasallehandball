@@ -8,17 +8,16 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Competitions } from "../../lib/interfaces";
 
 export type EventTypes = {
-    id: string;
-    Subject: string;
-    StartTime: string;
-    EndTime: string;
-    StartDate: string;
-    EndDate: string;
+    id: string;    
+    location: string;
     name: string;
     start: Date;
-    end: Date;
+    end: Date;   
+    categoryName: string;
+    competition: Competitions;
 }
 
 interface State {
@@ -65,7 +64,6 @@ class EventCalendar extends React.Component<{}, State> {
       fetch('/api/fixtures').then(res => res.json()).then(data => {
         let events__res = data
         calender.setEventsData(events__res);
-        console.log("Calender Events Data:", calender.getEventsData());
       });
   }
 
@@ -93,7 +91,7 @@ class EventCalendar extends React.Component<{}, State> {
               </>
             )
             :
-            this.state.selectedEvent.map((event) => (
+            this.state.selectedEvent.map((event: EventTypes) => (
               <div key={event.id} className="accordian">
                 <div className="accordian__title event__details" onClick={() => this.handleAccordionClick(event.id)}>
                   {event.name}
@@ -106,7 +104,7 @@ class EventCalendar extends React.Component<{}, State> {
                       <tbody>
                         <tr>
                           <td>
-                            Kick Off
+                            <strong>Kick Off</strong>
                           </td>
                           <td>
                             {event.start.toString()}
@@ -114,18 +112,18 @@ class EventCalendar extends React.Component<{}, State> {
                         </tr>
                         <tr>
                           <td>
-                            Competition
+                            <strong>Competition</strong>
                           </td>
                           <td>
-                            {event.start.toString()}
+                            {`${event.competition.competitionTypes.toString()} - ${event.competition.category.toString()}`}
                           </td>
                         </tr>
                         <tr>
                           <td>
-                            Location
+                            <strong>Location</strong>
                           </td>
                           <td>
-                            {event.start.toString()}
+                            {event.location}
                           </td>
                         </tr>
                       </tbody>

@@ -1,6 +1,6 @@
 import clientPromise from "./mongodbClient";
 
-import { Teams, Competitions, Matches, LeaderboardType } from "./interfaces";
+import { Teams, Competitions, MatchType, LeaderboardType } from "./interfaces";
 
 export async function getAllTeams(): Promise<Teams[]> {
     const client = await clientPromise;
@@ -50,7 +50,7 @@ export async function getAllCompetitions(): Promise<Competitions[]> {
     ]).toArray()
 }
 
-export async function getLatestFixtures(): Promise<Matches[]> {
+export async function getLatestFixtures(): Promise<MatchType[]> {
     const client = await clientPromise;
 
     const collection = client.db('lshc_backend').collection('fixtures');
@@ -59,7 +59,7 @@ export async function getLatestFixtures(): Promise<Matches[]> {
 }
  
 
-export async function getLatestResults(): Promise<Matches[]> {
+export async function getLatestResults(): Promise<MatchType[]> {
     const client = await clientPromise;
     const collection = client.db('lshc_backend').collection('fixtures');
     const today = new Date();
@@ -155,7 +155,7 @@ export async function getLatestResults(): Promise<Matches[]> {
       ]).toArray();
 }
 
-export async function getCurrentWeekFixtures(): Promise<Matches[]> {
+export async function getCurrentWeekFixtures(): Promise<MatchType[]> {
 
   const client = await clientPromise;
 
@@ -250,7 +250,7 @@ export async function getCurrentWeekFixtures(): Promise<Matches[]> {
   ]).toArray();
 }
 
-export async function getResults(): Promise<Matches[]> {
+export async function getResults(): Promise<MatchType[]> {
   const client = await clientPromise;
 
   const collection = client.db('lshc_backend').collection('fixtures')
@@ -403,11 +403,12 @@ export async function getLeaderboard(): Promise<LeaderboardType[]> {
         points: 1,
         competition: {
           season: "$competition.season",
-          category: {
-            categoryName: "$category.categoryName"
-          }
+          category:  "$category.categoryName"          
         }
       }
+    },
+    {
+      $sort: { points: -1 }
     }
 
   ]).toArray();

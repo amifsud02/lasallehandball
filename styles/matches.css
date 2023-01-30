@@ -253,7 +253,7 @@ table
   }
 }
 
-@media screen and (max-width: 772px)
+@media screen and (max-width: 800px)
 {
   .parent {
     width: 90%;
@@ -337,34 +337,33 @@ table
 
 
 /* CALENDER */
-
+#myCal{
+  width: 307px;
+  min-width: 307px;
+  margin-bottom: 30px;
+  margin-right: 15px;
+}
 .calendar
 {
   position: relative;
   display: flex !important;
-  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  align-items: center;
   margin: 0 auto;
   background: transparent;
 }
 
 .calendar .events__container
 {
-  margin: 0 5px;
   position: relative; 
   float: right;
   min-width: 307px;
-  height: 325px;
-  max-height: 325px;
   flex-grow: 1;
-
+  margin-bottom: 30px;
 }
 
 .accordian{
-  width: 90%;
-  margin: 15px auto;
+  width: 100%;
 }
 
 .accordian__title{
@@ -377,8 +376,8 @@ table
   color: white;
   font-weight: 600;
   display: grid;
-  width: 100%;
-  margin: 15px auto;
+  /* width: 100%; */
+  margin-bottom: 15px;
   min-height: 50px;
   height: 50px; 
   place-items: center;
@@ -390,14 +389,14 @@ table
   background-color: white;   
   max-height: 0;
   overflow: hidden;
+  border: 0px dashed #01296f;
   transition: all 0.5s ease-in-out;
 }
 
 .accordian__content.open{
   border: 0.5px dashed #01296f;
-  padding: 15px;
   max-height: 200px;
-  
+  margin-bottom: 15px;
 }
 
 
@@ -433,24 +432,33 @@ table
   place-content: center;
 }
 
+@media screen and (max-width: 801px) {
+  .calendar{ 
+    flex-wrap: wrap;
+  }
+}
 
 @media screen and (max-width: 693px)
 {
+
+  #myCal{
+    margin-right: 0;
+
+  }
   .calendar
   {
-    max-width: 325px;
+    max-width: 307px;
   }
 
   .calendar .events__container
   {
     margin-top: 10px;
-    width: 325px;
-    height: auto;
+    width: 307px;
     min-height: 50px;
   }
 
   .calendar .event__details{
-    width: 90%;
+    width: 100%;
     border-radius: 3px;
   }
 }
