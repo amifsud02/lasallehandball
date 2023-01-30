@@ -9,7 +9,7 @@ export default function Matches({props, cid, status}: {props: MatchType[], cid: 
     let counter = 0;
     const allMatches = props.filter(
         (match: MatchType) =>
-          match.competition.competitionType == cid && match.status == status
+          match.competition.competitionTypes == cid && match.status == status
       );
 
     if(allMatches.length === 0) {
@@ -35,7 +35,7 @@ export default function Matches({props, cid, status}: {props: MatchType[], cid: 
                             <div className="match-details">
 
                                 <div className="match-type">
-                                    <h4>{match.competition.competitionType} - {match.competition.category}</h4>
+                                    <h4>{match.competition.competitionTypes} - {match.competition.category}</h4>
                                 </div>
 
                                 {
