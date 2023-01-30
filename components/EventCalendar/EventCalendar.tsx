@@ -115,7 +115,7 @@ class EventCalendar extends React.Component<{}, State> {
                             <strong>Competition</strong>
                           </td>
                           <td>
-                            {`${event.competition.competitionTypes.toString()} - ${event.competition.category.toString()}`}
+                            {`${event.competition.competitionTypes} - ${event.competition.category.toString()}`}
                           </td>
                         </tr>
                         <tr>

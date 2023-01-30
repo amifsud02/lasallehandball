@@ -10,7 +10,7 @@ export type Teams = {
 export type Competitions = {
     id: ObjectId;
     season: string;
-    competitionType: string;
+    competitionTypes: string;
     category: string;
 }
 

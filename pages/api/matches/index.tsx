@@ -62,7 +62,7 @@ const fixtures = async(req: NextApiRequest, res: NextApiResponse) => {
             competition: {
               season: "$competition_info.season",
               category: "$category_name.categoryName",
-              competitionType: "$competition_type_name.competitionName"
+              competitionTypes: "$competition_type_name.competitionName"
             },
             homeTeam: {
                 teamName: "$home_name.teamName",
