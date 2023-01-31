@@ -249,7 +249,7 @@ table
   }
 
   .match {
-    padding: 20px 0;
+    padding: 20px 40px;
   }
 }
 
@@ -257,6 +257,10 @@ table
 {
   .parent {
     width: 90%;
+  }
+
+  .match {
+    padding: 20px 0;
   }
 
   .team-badge span img
@@ -540,7 +544,7 @@ table
   font-size: 0.5em;
 }
 
-.vs.notFin {
+.vs.notFin, .match-type.notFin {
   display: none;
 }
 
@@ -550,7 +554,7 @@ table
     flex-wrap: wrap;
   }
 
-  .vs.notFin {
+  .vs.notFin, .match-type.notFin {
     display: block;
   }
 
