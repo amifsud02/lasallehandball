@@ -1,13 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
 import Calendar from "color-calendar";
 import "color-calendar/dist/css/theme-glass.css";
 
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Competitions } from "../../lib/interfaces";
 
 export type EventTypes = {
@@ -18,6 +13,7 @@ export type EventTypes = {
     end: Date;   
     categoryName: string;
     competition: Competitions;
+    formattedDate: Date;
 }
 
 interface State {
@@ -107,7 +103,7 @@ class EventCalendar extends React.Component<{}, State> {
                             <strong>Kick Off</strong>
                           </td>
                           <td>
-                            {event.start.toString()}
+                            {event.formattedDate.toString()}
                           </td>
                         </tr>
                         <tr>

@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { EventTypes } from "../../../components/EventCalendar/EventCalendar";
 import clientPromise from "../../../lib/mongodbClient";
 
 const fixtures = async(req: NextApiRequest, res: NextApiResponse) => {
@@ -6,7 +7,7 @@ const fixtures = async(req: NextApiRequest, res: NextApiResponse) => {
     const client = await clientPromise;
     const collection = client.db('lshc_backend').collection('fixtures')
 
-    res.status(200).json(await collection.aggregate([ 
+    const results = await collection.aggregate([ 
           {
             $lookup: {
               from: "teams",
@@ -80,7 +81,23 @@ const fixtures = async(req: NextApiRequest, res: NextApiResponse) => {
                 
             }
         }
-    ]).toArray());
+    ]).toArray();
+
+    const modifiedData = results.map((result: EventTypes) => {
+      const startDateString = result.start.toString();
+      const date = new Date(startDateString);
+      var formattedDate = date.toLocaleString('en-UK', { day: 'numeric', month: "long", hour: 'numeric', minute: 'numeric' });
+      formattedDate =  formattedDate.replace(",", " /");
+
+      return{
+        ...result,
+        start: startDateString,
+        formattedDate: formattedDate
+      }
+    })
+
+    res.status(200).json(modifiedData);
+
 
 }
 
