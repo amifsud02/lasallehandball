@@ -1,13 +1,10 @@
-import { GetStaticProps } from "next/types"
-
 import { 
   getCurrentWeekFixtures,
   getLatestResults, 
   getLeaderboard
 } from "../lib/runner";
 
-import React, { useEffect, useRef, useState } from "react"
-//import { supabase } from "../utils/supabaseClient"
+import { useEffect, useState } from "react"
 
 import Nav from "../components/Nav/Nav";
 import Tabs from "../components/Tab/Tabs";
@@ -16,6 +13,7 @@ import Leaderboard from "../components/Leaderboard/Leaderboard";
 import Matches from "../components/Matches/Matches";
 import Layout from "../components/Layout/Layout";
 import { MatchType } from "../lib/interfaces";
+
 
 export type Teams = {
   id: number;
@@ -303,7 +301,6 @@ export default function Home(props: any)
         <section className="s-gallery">
           <div className="parent">
             <h1 className="title">Gallery</h1>
-            {/* <MiniGallery></MiniGallery> */}
             <div className="image-grid">
               <div className="image-row">
                 <div className="image image-01"></div>  

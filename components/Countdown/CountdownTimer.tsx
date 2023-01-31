@@ -14,14 +14,25 @@ const ShowCounter = ({ days, hours, minutes, seconds }: any) => {
   return (
     <div className="show-counter">
       <div className="countdown-link">
-        <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 3} />
-        :
-        <DateTimeDisplay value={hours} type={'Hours'} isDanger={false} />
-        :
-        <DateTimeDisplay value={minutes} type={'Mins'} isDanger={false} />
-        :
-        <DateTimeDisplay value={seconds} type={'Seconds'} isDanger={false} />
-        
+        <div className="countdown-indicator">
+          <DateTimeDisplay value={days} type={'Days'} isDanger={days <= 3} />
+          <span>Days</span>
+        </div>
+        <span style={{transform: "translateY(-15px)"}}>:</span>
+        <div className="countdown-indicator">
+          <DateTimeDisplay value={hours} type={'Hours'} isDanger={false} />
+          <span>Hours</span>
+        </div>
+        <span style={{transform: "translateY(-15px)"}}>:</span>
+        <div className="countdown-indicator">
+          <DateTimeDisplay value={minutes} type={'Mins'} isDanger={false} />
+          <span>Mins</span>
+        </div>
+        <span style={{transform: "translateY(-15px)"}}>:</span>
+        <div className="countdown-indicator">
+          <DateTimeDisplay value={seconds} type={'Seconds'} isDanger={false} />
+          <span>Secs</span>
+        </div>
       </div>
     </div>
   );

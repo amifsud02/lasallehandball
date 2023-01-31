@@ -1,11 +1,15 @@
-
+import dynamic from "next/dynamic";
 
 import { useEffect, useState } from "react";
-import { Match } from "..";
 
-import EventCalendar from "../../components/EventCalendar/EventCalendar";
-import Footer from "../../components/Footer/Footer";
-import Matches from "../../components/Matches/Matches";
+const EventCalendar = dynamic(() => import('../../components/EventCalendar/EventCalendar'), {
+    ssr: false
+})
+
+const Matches = dynamic(() => import('../../components/Matches/Matches'), {
+    ssr: false
+})
+
 import PageHeader from "../../components/PageHeader/PageHeader";
 import Tab from "../../components/Tab/Tab";
 import Tabs from "../../components/Tab/Tabs";
@@ -14,13 +18,14 @@ import { MatchType } from "../../lib/interfaces";
 
 function MatchesPage(){
 
-    const [isLoading, setLoading] = useState(true);
     const [fixtures, setFixturesData] = useState<MatchType[]>([]);
     const [results, setResultsData] = useState<MatchType[]>([]);
 
     useEffect(() => {
         async function fetchMatchesData() {
-            const response = await fetch('/api/matches');
+            const response = await fetch('/api/matches', {
+                cache: 'force-cache'
+            });
             const data = await response.json()
             
             const modifiedData = data.map((result: MatchType) => {
@@ -43,80 +48,73 @@ function MatchesPage(){
             const modifiedFixtures = modifiedData.filter((md: MatchType) => md.status === "Not Started")
 
             setFixturesData(modifiedFixtures);
-            setResultsData(modifiedResults);
-
-            setTimeout(function(){ 
-                setLoading(false); 
-            }, 2000);
-            
+            setResultsData(modifiedResults);           
         }
         fetchMatchesData()
     }, [])
 
-    if(isLoading)
-    {
-        return (
-            <div className="loader-wrapper">
-                <span className="loader">
-                    <span className="loader-inner">
-
-                    </span>
-                </span>
-            </div>
-        )
-    }
     return(
         <>  
             
-           <PageHeader pageName="Matches"/>
-           <section>
-                <div className="parent">
-                    <h1 className="title">Latest Results</h1>
+           <PageHeader pageName="Matches">
+            <section>
+                    <div className="parent">
+                        <h1 className="title">Latest Results</h1>
 
-                        <Tabs redirect="/matches" showall={false}>
-                            
-                            <Tab title="National League">
-                                <Matches props={results} cid="National League" status="Finished"></Matches>
-                            </Tab>
+                            <Tabs redirect="/matches" showall={false}>
+                                
+                                <Tab title="National League">
+                                    
+                                    <Matches props={results} cid="National League" status="Finished"></Matches>
+                                    
+                                </Tab>
 
-                            <Tab title="Louis Borg Cup">
-                                <Matches props={results} cid="Louis Borg Cup" status="Finished"></Matches>
-                            </Tab>
+                                <Tab title="Louis Borg Cup">
+                                    
+                                    <Matches props={results} cid="Louis Borg Cup" status="Finished"></Matches>
+                                    
+                                </Tab>
 
-                            <Tab title="Friendlies">
-                                <Matches props={results} cid="Friendlies" status="Finished"></Matches>
-                            </Tab>
-                        </Tabs>
-                </div>
-
-                <div className="parent">
-                    <h1 className="title">Upcoming Matches</h1>
-
-                        <Tabs redirect="/matches" showall={false}>
-                            
-                            <Tab title="National League">
-                                <Matches props={fixtures} cid="National League" status="Not Started"></Matches>
-                            </Tab>
-
-                            <Tab title="Louis Borg Cup">
-                                <Matches props={fixtures} cid="Louis Borg Cup" status="Not Started"></Matches>
-                            </Tab>
-
-                            <Tab title="Friendlies">
-                                <Matches props={fixtures} cid="Friendlies" status="Not Started"></Matches>
-                            </Tab>
-                        </Tabs>
-                </div>
-
-                <div className="parent">
-                    <div className="calendar">
-                        <EventCalendar></EventCalendar>
+                                <Tab title="Friendlies">
+                                    
+                                    <Matches props={results} cid="Friendlies" status="Finished"></Matches>
+                                    
+                                </Tab>
+                            </Tabs>
                     </div>
-                </div>
-                       
 
-            </section>
-           <Footer/>
+                    <div className="parent">
+                        <h1 className="title">Upcoming Matches</h1>
+
+                            <Tabs redirect="/matches" showall={false}>
+                                
+                                <Tab title="National League">
+                                    
+                                    <Matches props={fixtures} cid="National League" status="Not Started"></Matches>
+                                    
+                                </Tab>
+
+                                <Tab title="Louis Borg Cup">
+                                    
+                                    <Matches props={fixtures} cid="Louis Borg Cup" status="Not Started"></Matches>
+                                    
+                                </Tab>
+
+                                <Tab title="Friendlies">
+                                    
+                                    <Matches props={fixtures} cid="Friendlies" status="Not Started"></Matches>
+                                    
+                                </Tab>
+                            </Tabs>
+                    </div>
+
+                    <div className="parent">
+                        <div className="calendar">
+                            <EventCalendar></EventCalendar>
+                        </div>
+                    </div>
+                </section>
+            </PageHeader>
         </>
         
     )

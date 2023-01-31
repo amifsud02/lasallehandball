@@ -530,8 +530,61 @@ table
   line-height: 1rem;
 }
 
+.countdown-indicator {
+  display: inline-flex;
+  align-items: center;
+  flex-flow: column
+}
 
+.countdown-indicator span {
+  font-size: 0.5em;
+}
 
+.vs.notFin {
+  display: none;
+}
 
+@media screen and (max-width: 500px) {
+  .match.notFin{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
+  .vs.notFin {
+    display: block;
+  }
 
+  .home-team.notFin .team-name, .away-team.notFin .team-name{
+    display: none;
+  }
+
+  .match-type.notFin{
+    text-align: center;
+    order: 1;
+  }
+
+  .home-team.notFin, .away-team.notFin, .vs.notFin{
+    order: 2;
+  }
+
+  .match-details.notFin{
+    order: 3;
+  }
+
+  .match-type.notFin, .match-details.notFin {
+    width: 500px;
+  }
+
+  .home-team.notFin{
+    margin-right: -50px;
+  }
+
+  .away-team.notFin{
+    margin-left: -50px;
+  }
+
+  .match-details.notFin .match-type{
+    display: none;
+  }
+
+}

@@ -1,8 +1,12 @@
 import Head from "next/head";
-import Footer from "../Footer/Footer";
+
+import dynamic from "next/dynamic";
+import Nav from "../Nav/Nav";
+
+const Footer = dynamic(() => import('../Footer/Footer'))
 
 export type Props = {
-    title: string;
+    title?: string;
     children: any;
 }
 
@@ -32,15 +36,11 @@ export default function Layout(props: Props){
                 <meta property="twitter:description" content="An amateur club with a professional mentality."></meta> 
                 {/* <meta property="twitter:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"></meta>     */}
 
-                <link
-                    href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-                    rel="stylesheet"
-                />
             </Head>
-
+        
             {props.children}
 
-            <Footer></Footer>
+            <Footer/>
         </>
     )
 }
