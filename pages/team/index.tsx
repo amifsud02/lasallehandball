@@ -4,8 +4,8 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 function TeamPage(){
     return(
         <>
-            <PageHeader pageName="Team"/>
-            <Footer/>
+            <PageHeader pageName="Team">
+            </PageHeader>
         </>
         
     )

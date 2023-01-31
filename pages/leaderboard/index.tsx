@@ -9,32 +9,31 @@ function FixturesPage()
 {
     return(
         <>
-           <PageHeader pageName="Leaderboard"/>
-           <section>     
-            <div className="parent">
-                <h1 className="title">Standings</h1>
+           <PageHeader pageName="Leaderboard">
+            <section>     
+                <div className="parent">
+                    <h1 className="title">Standings</h1>
 
-                {/* <Tabs redirect="/team" showall={false}>
-                    <Tab title="National League Men">
-                        <Leaderboard props={props.leaderboards} cid={"Men"}/>
-                    </Tab>
+                    {/* <Tabs redirect="/team" showall={false}>
+                        <Tab title="National League Men">
+                            <Leaderboard props={props.leaderboards} cid={"Men"}/>
+                        </Tab>
 
-                    <Tab title="National League Women">
-                        <Leaderboard props={props.leaderboards} cid={"Women"}/>
-                    </Tab>
+                        <Tab title="National League Women">
+                            <Leaderboard props={props.leaderboards} cid={"Women"}/>
+                        </Tab>
 
-                    <Tab title="U21 Men">
-                        <Leaderboard props={props.leaderboards} cid={"U21 Men"}/>
-                    </Tab>
+                        <Tab title="U21 Men">
+                            <Leaderboard props={props.leaderboards} cid={"U21 Men"}/>
+                        </Tab>
 
-                    <Tab title="U21 Women">
-                        <Leaderboard props={props.leaderboards} cid={"U21 Women"}/>
-                    </Tab>
-                </Tabs> */}
-            </div>
-            </section>
-
-           <Footer/>
+                        <Tab title="U21 Women">
+                            <Leaderboard props={props.leaderboards} cid={"U21 Women"}/>
+                        </Tab>
+                    </Tabs> */}
+                </div>
+                </section>
+            </PageHeader>
         </>
         
     )

@@ -337,7 +337,7 @@ a {
 
 .management__container{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 325px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
   grid-gap: 15px 15px;
   justify-content: center;
   align-items: baseline;

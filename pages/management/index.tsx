@@ -4,7 +4,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 function ManagementPage(){
     return(
         <>
-            <PageHeader pageName="Management"/>
+            <PageHeader pageName="Management">
 
             <section className="parent">
                 <div className="management__container">
@@ -129,9 +129,7 @@ function ManagementPage(){
                     </div>
                 </div>
             </section>
-
-
-            <Footer/>
+            </PageHeader>
         </>
         
     )
