@@ -366,5 +366,5 @@ export async function getStaticProps(){
       fixtures: modifiedFixtures,
       leaderboards: leaderboard
     }
-  };
+  }
 }

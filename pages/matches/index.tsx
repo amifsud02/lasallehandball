@@ -24,7 +24,8 @@ function MatchesPage(){
     useEffect(() => {
         async function fetchMatchesData() {
             const response = await fetch('/api/matches', {
-                cache: 'force-cache'
+                cache: 'force-cache',
+                next: { revalidate: 60 }
             });
             const data = await response.json()
             

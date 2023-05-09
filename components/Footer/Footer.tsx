@@ -74,7 +74,7 @@ const Footer = () => {
                     © 2023 - La Salle Handball Club
                 </div>
                 <div className="sf-content">
-                    Designed and Developed by <span><a href="https://cgowt.com" style={{color: "blue"}}>CGOWT</a></span>
+                    Designed and Developed by <span><a href="#" style={{color: "blue"}}>Anthony Mifsud</a></span>
                 </div>
             </div>
         </footer>
